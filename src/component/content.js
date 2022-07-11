@@ -1,12 +1,16 @@
-import PublisherDetails from "./publisherDetails";
 import PublisherList from "./publisherList";
+import PublisherDetails from "./publisherDetails";
+import PublisherAdd from "./publisherAdd";
+import PublisherEdit from "./publisherEdit";
 
 const Content = () => {
   return (
-    <div>
+    <div className="content">
       {"Content"}
-      <PublisherDetails></PublisherDetails>
       <PublisherList></PublisherList>
+      <PublisherDetails></PublisherDetails>
+      <PublisherAdd></PublisherAdd>
+      <PublisherEdit></PublisherEdit>
     </div>
   );
 };

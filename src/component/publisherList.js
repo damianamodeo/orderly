@@ -1,5 +1,5 @@
 const PublisherList = () => {
-  return <div>PublisherList</div>;
+  return <div className="publisher-list" >PublisherList</div>;
 };
 
 export default PublisherList;

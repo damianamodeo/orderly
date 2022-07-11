@@ -2,6 +2,8 @@ import Nav from "./component/nav";
 import Header from "./component/header";
 import Content from "./component/content";
 
+import "./css/publisher-add.css";
+
 function App() {
   return (
     <div className="App">

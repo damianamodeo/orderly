@@ -1,5 +1,5 @@
 const PublisherDetails = () => {
-  return <div>PublisherDetails</div>;
+  return <div className="publisher-details">PublisherDetails</div>;
 };
 
 export default PublisherDetails;
