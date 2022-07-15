@@ -5,12 +5,13 @@ import Content from "./component/content";
 import "./css/publisher-add.css";
 import "./css/publisher-list.css";
 import "./css/content.css";
+import "./css/nav.css";
+import "./css/header.css";
 
 function App() {
   return (
     <div className="App">
       <Nav />
-      <Header />
       <Content></Content>
     </div>
   );

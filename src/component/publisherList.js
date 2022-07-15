@@ -1,19 +1,29 @@
+import Header from "./header";
+import HeaderRight from "./headerRight";
 import { db } from "../js/db";
 import { useLiveQuery } from "dexie-react-hooks";
-// const PublisherList = () => {
-//   return <div className="publisher-list" >PublisherList</div>;
-// };
 
-// export default PublisherList;
-
-export default function PublisherList() {
-  const publishers = useLiveQuery(
-    () => db.publishers.toArray()
+export default function PublisherList({ viewPublisherDetails, addPublisher }) {
+  const publishers = useLiveQuery(() =>
+    db.publishers.orderBy("lastName").toArray()
   );
 
-  return <ul className="publisher-list">
-    {publishers?.map(publisher => <li key={publisher.id}>
-      {publisher.firstName}, {publisher.birthDate}
-    </li>)}
-  </ul>;
+  return (
+    <>
+      <Header
+        title="Publishers"
+        headerRight={<HeaderRight actionRight={addPublisher} label="Add"/>}
+      />
+      <ul className="publisher-list">
+        {publishers?.map((publisher) => (
+          <li
+            key={publisher.id}
+            onClick={() => viewPublisherDetails(publisher)}
+          >
+            {publisher.lastName}, {publisher.firstName}
+          </li>
+        ))}
+      </ul>
+    </>
+  );
 }

@@ -1,5 +1,6 @@
-const Nav = () => {
-  return <div className="nav" >Nav 2</div>;
+const Nav = ({addPublisher, viewPublisherList}) => {
+  return <div className="nav" >Nav
+  </div>;
 };
 
 export default Nav;
