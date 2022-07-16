@@ -17,9 +17,7 @@ const PublisherDetails = ({
         }
       />
       <div className="publisher-details">
-        <div>
-          {publisher.firstName} {publisher.lastName}
-        </div>
+
         <div>Mobile: {publisher.mobilePhone}</div>
         <div>DOB: {publisher.birthDate}</div>
       </div>

@@ -4,6 +4,7 @@ import Content from "./component/content";
 
 import "./css/publisher-add.css";
 import "./css/publisher-list.css";
+import "./css/publisher-details.css";
 import "./css/content.css";
 import "./css/nav.css";
 import "./css/header.css";

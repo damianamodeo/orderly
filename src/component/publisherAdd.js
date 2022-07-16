@@ -6,20 +6,20 @@ import { useState } from "react";
 
 export default function PublisherAdd({ viewPublisherList, viewPublisherDetails }) {
   const [firstName, setFirstName] = useState("");
-  const [middleName, setMiddleName] = useState(undefined);
+  const [middleName, setMiddleName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [otherName, setOtherName] = useState(undefined);
-  const [familyHead, setFamilyHead] = useState(undefined);
-  const [birthDate, setBirthDate] = useState(undefined);
-  const [baptismDate, setBaptismDate] = useState(undefined);
-  const [homePhone, setHomePhone] = useState(undefined);
-  const [mobilePhone, setMobilePhone] = useState(undefined);
-  const [personalEmail, setPersonalEmail] = useState(undefined);
-  const [jwpubEmail, setJwpubEmail] = useState(undefined);
-  const [unit, setUnit] = useState(undefined);
-  const [house, setHouse] = useState(undefined);
-  const [street, setStreet] = useState(undefined);
-  const [suburb, setSuburb] = useState(undefined);
+  const [otherName, setOtherName] = useState("");
+  const [familyHead, setFamilyHead] = useState("");
+  const [birthDate, setBirthDate] = useState("");
+  const [baptismDate, setBaptismDate] = useState("");
+  const [homePhone, setHomePhone] = useState("");
+  const [mobilePhone, setMobilePhone] = useState("");
+  const [personalEmail, setPersonalEmail] = useState("");
+  const [jwpubEmail, setJwpubEmail] = useState("");
+  const [unit, setUnit] = useState("");
+  const [house, setHouse] = useState("");
+  const [street, setStreet] = useState("");
+  const [suburb, setSuburb] = useState("");
 
   // const publisher = {}
 

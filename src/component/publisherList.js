@@ -5,7 +5,7 @@ import { useLiveQuery } from "dexie-react-hooks";
 
 export default function PublisherList({ viewPublisherDetails, addPublisher }) {
   const publishers = useLiveQuery(() =>
-    db.publishers.orderBy("lastName").toArray()
+    db.publishers.orderBy("[lastName+firstName]").toArray()
   );
 
   return (
@@ -18,6 +18,7 @@ export default function PublisherList({ viewPublisherDetails, addPublisher }) {
         {publishers?.map((publisher) => (
           <li
             key={publisher.id}
+            className="publisher-card"
             onClick={() => viewPublisherDetails(publisher)}
           >
             {publisher.lastName}, {publisher.firstName}
