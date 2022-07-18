@@ -4,6 +4,8 @@
 
 .detail-group {
   background-color: grey;
+  margin: .4rem;
+  padding: .3rem;
 }
 
 .label-details {
