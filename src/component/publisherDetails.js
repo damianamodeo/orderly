@@ -7,6 +7,20 @@ const PublisherDetails = ({
   editPublisherDetails,
   viewPublisherList,
 }) => {
+  const today = new Date();
+
+  const birthDate = new Date(publisher.birthDate);
+  const birthDays =
+    (today.getTime() - birthDate.getTime()) / 1000 / 60 / 60 / 24;
+  const birthYears = Math.floor(birthDays / 365.25);
+  const birthMonths = ((birthDays / 365.25 - birthYears) / 10) * 12;
+
+  const baptismDate = new Date(publisher.baptismDate);
+  const baptismDays =
+    (today.getTime() - baptismDate.getTime()) / 1000 / 60 / 60 / 24;
+  const baptismYears = Math.floor(baptismDays / 365.25);
+  const baptismMonths = ((baptismDays / 365.25 - baptismYears) / 10) * 12;
+
   return (
     <>
       <Header
@@ -57,8 +71,37 @@ const PublisherDetails = ({
           </div>
         )}
 
-        <div>DOB: {publisher.birthDate}</div>
-        <div>Bap: {publisher.baptismDate}</div> 
+        {(publisher.birthDate.length > 0 ||
+          publisher.baptismDate.length > 0) && (
+          <div className="detail-group">
+            {publisher.birthDate.length > 0 && (
+              <>
+                <div className="label-details">date of birth</div>
+                <div className="detail">
+                  {birthDate.getDate()}{" "}
+                  {birthDate.toLocaleString("default", { month: "long" })}
+                  {birthDate.getFullYear()}
+                </div>
+                <div className="detail-small">
+                  {birthYears} years {birthMonths.toFixed(1) * 10} months
+                </div>
+              </>
+            )}
+            {publisher.baptismDate.length > 0 && (
+              <>
+                <div className="label-details">date of birth</div>
+                <div className="detail">
+                  {baptismDate.getDate()}{" "}
+                  {baptismDate.toLocaleString("default", { month: "long" })}
+                  {baptismDate.getFullYear()}
+                </div>
+                <div className="detail-small">
+                  {baptismYears} years {baptismMonths.toFixed(1) * 10} months   
+                </div>
+              </>
+            )}
+          </div>
+        )}
       </div>
     </>
   );

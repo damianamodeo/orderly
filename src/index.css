@@ -1,9 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
 
+:root {
+  --grey3: rgb(170, 170, 170);
+  --grey2: rgb(210, 210, 210);
+  --grey1: rgb(220, 220, 220);
+  --purple: rgb(92, 60, 136);
+  --blue1: rgb(74, 109, 167);
+  --blue2: rgb(121, 160, 203);
+  --orange: rgb(196, 132, 48);
+  --maroon: rgb(148, 40, 38);
+}
+
 body {
   margin: 0;
   font-size: 62.5%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Noto Sans", sans-serif;
+  background: var(--grey1);
 }

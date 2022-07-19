@@ -19,24 +19,24 @@ const firebaseConfig = {
   appId: "1:1048111863868:web:43c6f0adcebb10c6504b39",
 };
 
-initializeApp(firebaseConfig); 
+// initializeApp(firebaseConfig); 
 
-const dbfs = getFirestore()
+// const dbfs = getFirestore()
 
-const colRef = collection(dbfs, 'test')
+// const colRef = collection(dbfs, 'test')
 
-// read firestore database to console
-getDocs(colRef)
-  .then((snapshot) => {
-    let books = []
-    snapshot.docs.forEach((doc) =>{
-      books.push({...doc.data(), id: doc.id})
-    })
-    console.log(books)
-  })
-  .catch(err => {
-    console.log(err.message)
-  })
+// // read firestore database to console
+// getDocs(colRef)
+//   .then((snapshot) => {
+//     let books = []
+//     snapshot.docs.forEach((doc) =>{
+//       books.push({...doc.data(), id: doc.id})
+//     })
+//     console.log(books)
+//   })
+//   .catch(err => {
+//     console.log(err.message)
+//   })
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
