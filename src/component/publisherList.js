@@ -1,7 +1,9 @@
 import Header from "./header";
 import HeaderRight from "./headerRight";
+import PublisherCard from "./publisherCard";
 import { db } from "../js/db";
 import { useLiveQuery } from "dexie-react-hooks";
+import Grid from "@mui/material/Grid";
 
 export default function PublisherList({ viewPublisherDetails, addPublisher }) {
   const publishers = useLiveQuery(() =>
@@ -12,19 +14,25 @@ export default function PublisherList({ viewPublisherDetails, addPublisher }) {
     <>
       <Header
         title="Publishers"
-        headerRight={<HeaderRight actionRight={addPublisher} label="Add"/>}
+        headerRight={<HeaderRight actionRight={addPublisher} label="Add" />}
       />
-      <ul className="publisher-list">
+
+      <Grid container spacing={.5}>
         {publishers?.map((publisher) => (
-          <li
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={4}
+            lg={3}
+            xl={2}
             key={publisher.id}
-            className="publisher-card"
             onClick={() => viewPublisherDetails(publisher)}
           >
-            {publisher.lastName}, {publisher.firstName}
-          </li>
+            <PublisherCard publisher={publisher}/>
+          </Grid>
         ))}
-      </ul>
+      </Grid>
     </>
   );
 }

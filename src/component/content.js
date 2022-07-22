@@ -61,7 +61,7 @@ const Content = () => {
   );
 
   return (
-    <div className="content">
+    <div>
       {content}
     </div>
   );

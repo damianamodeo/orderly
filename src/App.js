@@ -1,20 +1,15 @@
 import Nav from "./component/nav";
-import Header from "./component/header";
 import Content from "./component/content";
-
-import "./css/publisher-add.css";
-import "./css/publisher-list.css";
-import "./css/publisher-details.css";
-import "./css/content.css";
-import "./css/nav.css";
-import "./css/header.css";
+import "@fontsource/noto-sans";
+import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Nav />
       <Content></Content>
-    </div>
+    </>
   );
 }
 

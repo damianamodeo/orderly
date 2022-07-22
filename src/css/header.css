@@ -1,4 +1,4 @@
-.header {
+/* .header {
   position: fixed;
   width: 100%;
   top: 0;
@@ -10,9 +10,9 @@
 }
 
 .header-left {
-  /* padding-left: .5rem; */
+  padding-left: .5rem;
 }
 
 .header-right {
-  /* padding-right: .5rem; */
-}
+  padding-right: .5rem;
+} */

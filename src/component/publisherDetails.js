@@ -34,7 +34,7 @@ const PublisherDetails = ({
         }
       />
 
-      <div className="publisher-details">
+      
         {(publisher.mobilePhone.length > 0 ||
           publisher.homePhone.length > 0) && (
           <div className="detail-group">
@@ -102,7 +102,7 @@ const PublisherDetails = ({
             )}
           </div>
         )}
-      </div>
+      
     </>
   );
 };
