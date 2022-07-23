@@ -1,9 +1,8 @@
 import { db } from "../db/db";
 import { useLiveQuery } from "dexie-react-hooks";
-import { Grid } from "@mui/material";
-import { PublisherCard } from "./publisherCard";
+import { Grid, Typography } from "@mui/material";
 import { Header } from "../header/header";
-import AddIcon from '@mui/icons-material/Add';import { Typography } from "@mui/material";
+import AddIcon from '@mui/icons-material/Add';
 
 
 export const PublisherList = ({ publisherDetails, publisherAdd }) => {
@@ -30,7 +29,9 @@ export const PublisherList = ({ publisherDetails, publisherAdd }) => {
             key={publisher.id}
             onClick={() => publisherDetails(publisher)}
           >
-            <PublisherCard publisher={publisher} />
+            <Typography>
+            {`${publisher.lastName}, ${publisher.firstName}`}
+            </Typography>
           </Grid>
         ))}
       </Grid>
