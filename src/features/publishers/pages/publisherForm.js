@@ -14,8 +14,8 @@ export const PublisherForm = ({ publisher }) => {
   const [mobilePhone, setMobilePhone] = useState(publisher.mobilePhone);
   const [personalEmail, setPersonalEmail] = useState(publisher.personalEmail);
   const [jwpubEmail, setJwpubEmail] = useState(publisher.jwpubEmail);
-  const [unit, setUnit] = useState(publisher.unit);
-  const [house, setHouse] = useState(publisher.house);
+  const [unitNumber, setUnitNumber] = useState(publisher.unitNumber);
+  const [houseNumber, setHouseNumber] = useState(publisher.houseNumber);
   const [street, setStreet] = useState(publisher.street);
   const [suburb, setSuburb] = useState(publisher.suburb);
 
@@ -95,22 +95,22 @@ export const PublisherForm = ({ publisher }) => {
         >
           <Grid item xs={3} sm={2} md={1} lg={1} xl={1}>
             <TextField
-              value={unit}
+              value={unitNumber}
               label="Unit"
               onChange={(e) => {
-                publisher.unit = e.target.value;
-                setUnit(e.target.value);
+                publisher.unitNumber = e.target.value;
+                setUnitNumber(e.target.value);
               }}
               variant="filled"
             />
           </Grid>
           <Grid item xs={3} sm={2} md={1} lg={1} xl={1}>
             <TextField
-              value={house}
+              value={houseNumber}
               label="House"
               onChange={(e) => {
-                publisher.house = e.target.value;
-                setHouse(e.target.value);
+                publisher.houseNumber = e.target.value;
+                setHouseNumber(e.target.value);
               }}
               variant="filled"
             />

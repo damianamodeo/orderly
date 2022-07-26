@@ -1,4 +1,5 @@
 import CallIcon from "@mui/icons-material/Call";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 import ChatBubbleIcon from "@mui/icons-material/ChatBubble";
 import EmailIcon from "@mui/icons-material/Email";
 import { Typography, IconButton, Stack, Box } from "@mui/material";
@@ -122,6 +123,28 @@ export const PublisherDetails = ({
               href={`mailto:${publisher.jwpubEmail}`}
             >
               <EmailIcon />
+            </IconButton>
+          </Stack>
+        ) : null}
+      </Box>
+      <Box>
+        {publisher.houseNumber && publisher.street ? (
+          <Stack
+            direction="row"
+            justifyContent="space-between"
+            alignItems="center"
+            spacing={4}
+          >
+            <Typography fontSize={{ xs: 15 }}>
+              {publisher.unitNumber ? `${publisher.unitNumber}/` : null}
+              {`${publisher.houseNumber} ${publisher.street}, ${publisher.suburb}`}
+            </Typography>
+            <IconButton
+              aria-label="delete"
+              size="large"
+              href={`https://www.google.com/maps/place/${publisher.houseNumber}+${publisher.street},+${publisher.suburb}`}
+            >
+              <LocationOnIcon />
             </IconButton>
           </Stack>
         ) : null}

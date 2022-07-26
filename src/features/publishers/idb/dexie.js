@@ -12,8 +12,8 @@ export const updatePublisher = (publisher, publisherDetails) => {
     homePhone: publisher.homePhone,
     mobilePhone: publisher.mobilePhone,
     personalEmail: publisher.personalEmail,
-    unit: publisher.unit,
-    house: publisher.house,
+    unitNumber: publisher.unitNumber,
+    houseNumber: publisher.houseNumber,
     street: publisher.street,
     suburb: publisher.suburb,
   });
@@ -34,8 +34,8 @@ export const addPublisher = (publisher, publisherList) => {
       mobilePhone: publisher.mobilePhone,
       personalEmail: publisher.personalEmail,
       jwpubEmail: publisher.jwpubEmail,
-      unit: publisher.unit,
-      house: publisher.house,
+      unitNumber: publisher.unitNumber,
+      houseNumber: publisher.houseNumber,
       street: publisher.street,
       suburb: publisher.suburb,
     });
