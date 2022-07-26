@@ -1,4 +1,4 @@
-import { Typography, Stack, AppBar, Toolbar } from "@mui/material";
+import { Typography, Box, Stack, AppBar, Toolbar } from "@mui/material";
 
 export const Header = ({ headerLeft, title, headerRight }) => {
   return (
@@ -6,14 +6,15 @@ export const Header = ({ headerLeft, title, headerRight }) => {
       <AppBar>
         <Toolbar>
           <Stack
+            sx={{ flexGrow: 1 }}
             direction="row"
             justifyContent="space-between"
-            alignItems="center"
-            spacing={2}
+            alignItems="stretch"
+            spacing={5}
           >
-            <Typography>{headerLeft}</Typography>
-            <Typography>{title}</Typography>
-            <Typography>{headerRight}</Typography>
+            {headerLeft}
+            {title}
+            {headerRight}
           </Stack>
         </Toolbar>
       </AppBar>

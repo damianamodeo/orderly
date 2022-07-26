@@ -7,11 +7,6 @@ function Navbar() {
   return (
     <>
       <Box sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }}>
-        <BottomNavigation>
-          <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-          <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
-          <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
-        </BottomNavigation>
       </Box>
     </>
   );

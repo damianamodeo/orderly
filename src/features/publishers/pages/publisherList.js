@@ -1,9 +1,8 @@
-import { db } from "../db/db";
+import { db } from "../../db/db";
 import { useLiveQuery } from "dexie-react-hooks";
 import { Grid, Typography } from "@mui/material";
-import { Header } from "../header/header";
-import AddIcon from '@mui/icons-material/Add';
-
+import { Header } from "../../header/header";
+import AddIcon from "@mui/icons-material/Add";
 
 export const PublisherList = ({ publisherDetails, publisherAdd }) => {
   const publishers = useLiveQuery(() =>
@@ -13,11 +12,11 @@ export const PublisherList = ({ publisherDetails, publisherAdd }) => {
   return (
     <>
       <Header
-        headerLeft=""
-        title="Publishers"
+        headerLeft={<Typography> </Typography>}
+        title={<Typography>Publishers</Typography>}
         headerRight={<AddIcon onClick={() => publisherAdd()} />}
       />
-      <Grid container spacing={0.5}>
+      <Grid container spacing={0.75}>
         {publishers?.map((publisher) => (
           <Grid
             item
@@ -29,8 +28,8 @@ export const PublisherList = ({ publisherDetails, publisherAdd }) => {
             key={publisher.id}
             onClick={() => publisherDetails(publisher)}
           >
-            <Typography>
-            {`${publisher.lastName}, ${publisher.firstName}`}
+            <Typography sx={{ padding: 2.5, backgroundColor: "white" }}>
+              {`${publisher.lastName}, ${publisher.firstName}`}
             </Typography>
           </Grid>
         ))}

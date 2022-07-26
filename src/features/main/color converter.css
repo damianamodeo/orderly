@@ -1,0 +1,14 @@
+
+:root {
+  --grey3: rgb(170, 170, 170);
+  --grey2: #d2d2d2;
+  --grey1: #e6e6e6;
+  --purple-dark:  #391c61;
+  --purple:       #5c3c88;
+  --purple-light: #7f5fad;
+  --blue-dark:   #3b5278;
+  --blue:        #4a6da7;
+  --blue-light:  #7b9acc;
+  --orange: rgb(196, 132, 48);
+  --maroon: rgb(148, 40, 38);
+}

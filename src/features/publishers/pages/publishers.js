@@ -10,8 +10,9 @@ export const Publishers = () => {
     setPublishers(
       <PublisherDetails
         publisher={publisher}
-        publisherList={publisherList}
         publisherEdit={publisherEdit}
+        publisherDetails={publisherDetails}
+        publisherList={publisherList}
       />
     );
   };
@@ -51,7 +52,6 @@ export const Publishers = () => {
     <>
       <Container
         sx={{
-          bgcolor: "#CCC",
         }}
       >
         {publishersPage}
