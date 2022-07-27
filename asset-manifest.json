@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/orderly/static/js/main.ab690f79.js",
+    "main.js": "/orderly/static/js/main.b381a50b.js",
     "service-worker.js": "/orderly/service-worker.js",
     "index.html": "/orderly/index.html",
-    "main.ab690f79.js.map": "/orderly/static/js/main.ab690f79.js.map"
+    "main.b381a50b.js.map": "/orderly/static/js/main.b381a50b.js.map"
   },
   "entrypoints": [
-    "static/js/main.ab690f79.js"
+    "static/js/main.b381a50b.js"
   ]
 }
