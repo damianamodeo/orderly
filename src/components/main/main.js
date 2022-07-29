@@ -1,12 +1,10 @@
 import React from "react";
-import { Content } from "../content/content";
-import { Navbar } from "../navbar/navbar";
+import { Page } from "../page/page";
 
 export const Main = () => {
   return (
     <div>
-      <Navbar></Navbar>
-      <Content></Content>
+      <Page></Page>
     </div>
   );
 };
