@@ -1,10 +1,12 @@
 import React from "react";
-import { Page } from "../page/page";
+import { Screen } from "./screen";
+import { Test } from "./test";
+
 
 export const Main = () => {
   return (
     <div>
-      <Page></Page>
+      <Screen/>
     </div>
   );
 };

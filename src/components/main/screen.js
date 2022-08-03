@@ -3,7 +3,7 @@ import { Navbar } from "../navbar/navbar";
 import { Dashboard } from "../dashboard/dashboard";
 import { Publishers } from "../publishers/publishers";
 
-export const Page = () => {
+export const Screen = () => {
   const dashboardPage = () => {
     setPage(<Dashboard />);
   };

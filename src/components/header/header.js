@@ -1,5 +1,16 @@
 export const Header = () => {
   return (
-    <div className="bg-green-300 fixed h-12 inset-x-0 md:left-12">header</div>
+    <div
+      className="
+      absolute 
+      inset-x-0 h-12 
+      border-b 
+      border-bgDark 
+      bg-bg 
+      p-2 
+      md:left-12"
+    >
+      Orderly 1.8
+    </div>
   );
 };
