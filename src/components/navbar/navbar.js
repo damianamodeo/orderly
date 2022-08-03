@@ -1,9 +1,7 @@
-import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
-import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
 import { Icon } from "./icons";
 import { PublishersIcon, DashboardIcon } from './svg';
 
-export const Navbar = ({ dashboardPage, publisherPage }) => {
+export const Navbar = ({ dashboardScreen, publisherScreen }) => {
   return (
     <>
       <div
@@ -12,10 +10,10 @@ export const Navbar = ({ dashboardPage, publisherPage }) => {
       items-center justify-around bg-bg
       md:h-screen md:w-12 md:flex-col md:justify-start z-50"
       >
-        <Icon label="Dashboard" action={dashboardPage}>
+        <Icon label="Dashboard" action={dashboardScreen}>
         <DashboardIcon/>
         </Icon>
-        <Icon label="Publishers" action={publisherPage}>
+        <Icon label="Publishers" action={publisherScreen}>
           <PublishersIcon/>
         </Icon>
       </div>

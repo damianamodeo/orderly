@@ -1,20 +1,16 @@
-export const Content = ({ children }) => {
+export const Content = ({ children, bgColor }) => {
+  const styles = "fixed h-screen w-screen " + bgColor;
+
   return (
     <>
+      <div className={styles}></div>
       <div
         className="
-        bg-backgroundLighter 
-        absolute
-        h-screen 
-        w-screen
-        "
-      ></div>
-      <div
-        className="absolute 
+        absolute 
         inset-y-12
         inset-x-0
-        overflow-auto 
-        bg-blue-100 
+        overflow-auto
+        overscroll-y-contain
         md:left-12 
         md:right-0
         md:bottom-0"

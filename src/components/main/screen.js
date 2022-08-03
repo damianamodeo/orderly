@@ -4,20 +4,24 @@ import { Dashboard } from "../dashboard/dashboard";
 import { Publishers } from "../publishers/publishers";
 
 export const Screen = () => {
-  const dashboardPage = () => {
-    setPage(<Dashboard />);
+  const headerTitle = "Dashboard";
+  const dashboardScreen = () => {
+    setScreen(<Dashboard />);
   };
 
-  const publisherPage = () => {
-    setPage(<Publishers />);
+  const publisherScreen = () => {
+    setScreen(<Publishers title={headerTitle} />);
   };
 
-  const [page, setPage] = useState(<Dashboard />);
+  const [page, setScreen] = useState(<Dashboard />);
 
   return (
     <>
-      <Navbar dashboardPage={dashboardPage} publisherPage={publisherPage} />
-        {page}
+      {page}
+      <Navbar
+        dashboardScreen={dashboardScreen}
+        publisherScreen={publisherScreen}
+      />
     </>
   );
 };
