@@ -1,9 +1,9 @@
-export const InputText = ({ label, value, action }) => {
+export const InputNumber = ({ label, value, action }) => {
   return (
     <>
       <div className="relative">
         <input
-          type="text"
+          type="tel"
           id="floating_filled"
           class="peer 
           block w-full 

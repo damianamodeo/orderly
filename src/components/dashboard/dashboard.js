@@ -57,7 +57,7 @@ export const Dashboard = () => {
           maiores numquam, itaque, et ipsa nesciunt eum accusantium.
         </div>
       </Content>
-      <Header title="Dashboard 2" />
+      <Header title="Dashboard 3" />
     </>
   );
 };

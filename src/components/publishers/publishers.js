@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Header } from "../header/header";
 import { Content } from "../main/content";
 import { PublisherList } from "./publisherList";
 import { PublisherEdit } from "./publisherEdit";
@@ -9,8 +8,8 @@ import { PublisherAdd } from "./publisherAdd";
 export const Publishers = () => {
   const publisherList = () => {
     setPage(
-      <PublisherList 
-        publisherDetails={publisherDetails} 
+      <PublisherList
+        publisherDetails={publisherDetails}
         publisherAdd={publisherAdd}
       />
     );
@@ -18,46 +17,36 @@ export const Publishers = () => {
 
   const publisherDetails = (publisher) => {
     setPage(
-      <PublisherDetails 
+      <PublisherDetails
         publisher={publisher}
         publisherEdit={publisherEdit}
         publisherDetails={publisherDetails}
         publisherList={publisherList}
       />
-      );
+    );
   };
 
   const publisherEdit = (publisher) => {
     setPage(
-      <PublisherEdit 
+      <PublisherEdit
         publisher={publisher}
         publisherDetails={publisherDetails}
       />
     );
   };
-  
+
   const publisherAdd = (publisher) => {
     setPage(
-      <PublisherAdd 
-        publisher={publisher} 
-        publisherList={publisherList}
-      />
+      <PublisherAdd publisher={publisher} publisherList={publisherList} />
     );
   };
 
   const [page, setPage] = useState(
-    <PublisherList 
-      publisherDetails={publisherDetails} 
+    <PublisherList
+      publisherDetails={publisherDetails}
       publisherAdd={publisherAdd}
     />
   );
 
-  const [bgColor, setBgColor] = useState("bg-bgLight");
-
-  return (
-    <>
-      <Content bgColor={bgColor}>{page}</Content>
-      <Header title="Publishers" />
-    </>
-  );
+  return <>{page}</>;
 };
