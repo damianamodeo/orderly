@@ -7,7 +7,7 @@ export const PublisherAdd = ({ publisherList }) => {
   const publisher = {};
   return (
     <>
-      <Content bgColor={"bg-bgLight"}>
+      <Content bgColor={"bg-bgLightest"}>
         <PublisherForm publisher={publisher} />
       </Content>
       <Header

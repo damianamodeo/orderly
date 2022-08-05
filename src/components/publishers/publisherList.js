@@ -2,6 +2,7 @@ import { db } from "../../db/dexie/dexie";
 import { useLiveQuery } from "dexie-react-hooks";
 import { Header } from "../header/header";
 import { Content } from "../main/content";
+import { Add } from "../../icons/add";
 
 export const PublisherList = ({ publisherDetails, publisherAdd }) => {
   const publishers = useLiveQuery(() =>
@@ -10,7 +11,7 @@ export const PublisherList = ({ publisherDetails, publisherAdd }) => {
 
   return (
     <>
-      <Content bgColor={"bg-bgLight"}>
+      <Content bgColor={"bg-bgLightest"}>
         <div
           className="
           grid 
@@ -40,7 +41,9 @@ export const PublisherList = ({ publisherDetails, publisherAdd }) => {
       <Header
         headerLeft={<div></div>}
         title={<div>Publishers</div>}
-        headerRight={<div onClick={() => {publisherAdd()}}>add</div>}
+        headerRight={<div onClick={() => {publisherAdd()}}>
+          <Add/>
+        </div>}
       />
     </>
   );

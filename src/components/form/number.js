@@ -8,17 +8,16 @@ export const InputNumber = ({ label, value, action }) => {
           class="peer 
           block w-full 
           appearance-none 
-          rounded-t-lg 
           border-0 
-          border-b
-          border-gray-300 
-          bg-gray-50 
+          border-b-2
+          border-bgDark
+          bg-bgLightest
           px-2.5 
           pb-2.5 
           pt-5 
           text-lg 
           text-gray-900 
-          focus:border-b-2 
+          focus:border-b-4 
           focus:border-primary
           focus:outline-none 
           focus:ring-0 

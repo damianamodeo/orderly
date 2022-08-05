@@ -10,67 +10,98 @@ export const PublisherDetails = ({
   publisherList,
   publisherEdit,
 }) => {
-  const sectionStyle = "border-bg border bg-white m-2 p-2";
-  const subSectionStyle = "flex justify-between m-2";
-  const detailStyle = "text-2xl font-bold";
+  const sectionStyle = "bg-white m-2 p-4 font-bold";
+  const subSectionStyle = "flex justify-between m-2 ";
+  const detailStyle = "text-lg text-secondary font-normal truncate";
 
   return (
     <>
-      <Content bgColor={"bg-bgLight"}>
-        <div className="m-2 text-center text-xs">
-          {publisher.otherName
-            ? `"${publisher.otherName}"`
-            : publisher.firstName}{" "}
-          {publisher.middleName} {publisher.lastName}
-        </div>
-        <div className={sectionStyle}>
-          Phone
-          <div className={subSectionStyle}>
-            <div className={detailStyle}>
-              {formatMobileNumber(publisher.mobilePhone)}
-            </div>
-            <div className="flex space-x-2">
-              <a href={`tel://${publisher.mobilePhone}`}>Call</a>
-              <a href={`sms://${publisher.mobilePhone}`}>Message</a>
-            </div>
+      <Content bgColor={"bg-bgLightest"}>
+        {publisher.mobilePhone || publisher.homePhone ? (
+          <div className={sectionStyle}>
+            Phone
+            {publisher.mobilePhone ? (
+              <div className={subSectionStyle}>
+                <a
+                  className={detailStyle}
+                  href={`tel://${publisher.mobilePhone}`}
+                >
+                  {formatMobileNumber(publisher.mobilePhone)}
+                </a>
+                <div className="flex space-x-2">
+                  <a href={`sms://${publisher.mobilePhone}`}>Message</a>
+                </div>
+              </div>
+            ) : null}
+            {publisher.homePhone ? (
+              <div className={subSectionStyle}>
+                <a
+                  className={detailStyle}
+                  href={`tel://${publisher.homePhone}`}
+                >
+                  {formatHomeNumber(publisher.homePhone)}
+                </a>
+              </div>
+            ) : null}
           </div>
-          <div className={subSectionStyle}>
-            <div className={detailStyle}>
-              {formatHomeNumber(publisher.homePhone)}
-            </div>
-            <a href={`tel://${publisher.homePhone}`}>Call</a>
-          </div>
-        </div>
+        ) : null}
 
-        <div className={sectionStyle}>
-          <div className={subSectionStyle}>
-            <a className={detailStyle} href={`mailto:${publisher.personalEmail}`}>{publisher.personalEmail}</a>
+        {publisher.personalEmail || publisher.jwpubEmail ? (
+          <div className={sectionStyle}>
+            Email
+            {publisher.personalEmail ? (
+              <div className={subSectionStyle}>
+                <a
+                  className={detailStyle}
+                  href={`mailto:${publisher.personalEmail}`}
+                >
+                  {publisher.personalEmail}
+                </a>
+              </div>
+            ) : null}
+            {publisher.jwpubEmail ? (
+              <div className={subSectionStyle}>
+                <a
+                  className={detailStyle}
+                  href={`mailto:${publisher.jwpubEmail}`}
+                >
+                  {publisher.jwpubEmail}
+                </a>
+              </div>
+            ) : null}
           </div>
-          <div className={subSectionStyle}>
-            <a className={detailStyle} href={`mailto:${publisher.jwpubEmail}`}>{publisher.jwpubEmail}</a>
+        ) : null}
+
+        {publisher.unitNumber ||
+        publisher.houseNumber ||
+        publisher.street ||
+        publisher.suburb ? (
+          <div className={sectionStyle}>
+            Address
+            <div className={subSectionStyle}>
+              <a
+                className={detailStyle}
+                href={`https://www.google.com/maps/place/${publisher.houseNumber}+${publisher.street},+${publisher.suburb}`}
+              >
+                <p>
+                  {publisher.unitNumber ? `${publisher.unitNumber}/` : null}
+                  {`${publisher.houseNumber} ${publisher.street}`}
+                </p>
+                <p>{`${publisher.suburb}`}</p>
+              </a>
+            </div>
           </div>
-        </div>
-        
-        <div className={sectionStyle}>
-        <div className={subSectionStyle}>
-          <div>
-            {publisher.unitNumber ? `${publisher.unitNumber}/` : null}
-            {`${publisher.houseNumber} ${publisher.street}, ${publisher.suburb}`}
-          </div>
-          <a
-            href={`https://www.google.com/maps/place/${publisher.houseNumber}+${publisher.street},+${publisher.suburb}`}
-          >
-            Location
-          </a>
-        </div>
-        </div>
+        ) : null}
       </Content>
 
       <Header
         headerLeft={<div onClick={publisherList}>Back</div>}
         title={
           <div>
-            {publisher.firstName} {publisher.lastName}
+            {publisher.otherName
+              ? `${publisher.otherName}`
+              : publisher.firstName}{" "}
+            {publisher.middleName == publisher.otherName ? null : publisher.middleName} {publisher.lastName}
           </div>
         }
         headerRight={<div onClick={() => publisherEdit(publisher)}>Edit</div>}

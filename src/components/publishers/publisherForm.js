@@ -7,8 +7,8 @@ import { InputText } from "../form/text";
 import { InputNumber } from "../form/number";
 
 export const PublisherForm = ({ publisher }) => {
-  const formSectionStyles = "flex justify-between flex-col p-4 border border-bg m-2";
-  const sectionLabelStyles = "text-white p-1 m-1 text-lg bg-primary";
+  const formSectionStyles = "flex justify-between bg-white p-2 m-2";
+  const sectionLabelStyles = "text-jwGrey p-1 m-1 font-bold text-lg ";
   const inputStyles = "space-y-2";
 
   const [firstName, setFirstName] = useState(publisher.firstName);
@@ -56,7 +56,7 @@ export const PublisherForm = ({ publisher }) => {
             }}
           />
           <InputText
-            label="Other"
+            label="Display   "
             value={otherName}
             action={(e) => {
               publisher.otherName = e.target.value;
