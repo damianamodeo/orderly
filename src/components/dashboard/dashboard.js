@@ -8,7 +8,7 @@ export const Dashboard = () => {
     <>
       <Content bgColor="bg-red-100">
         <InputText />
-        <div className="m-2 text-secondary">
+        <div className="m-2 text-secondary font-semibold">
           Dashboard: Lorem ipsum, dolor sit amet consectetur adipisicing elit.
           Corporis voluptates nihil, tempora alias labore provident, suscipit
           sequi possimus tempore rem laborum nam temporibus eligendi, aperiam
@@ -57,7 +57,7 @@ export const Dashboard = () => {
           maiores numquam, itaque, et ipsa nesciunt eum accusantium.
         </div>
       </Content>
-      <Header title="Dashboard 3" />
+      <Header title="Dashboard 4" />
     </>
   );
 };

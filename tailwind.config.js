@@ -26,6 +26,9 @@ module.exports = {
         "jwYellowDarkD": "#ecb368",
         "jwMaroon": "#942926",
         "jwBlack": "#121212",
+      },
+      fontFamily: {
+        noto: "'Noto Sans', sans-serif",
       }
     },
   },
