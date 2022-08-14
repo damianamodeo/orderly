@@ -17,8 +17,28 @@ body {
   scrollbar-width: none; /* Firefox */
 }
 
+
+
+
 colorConvert {
   background: hsl(264, 9%, 68%);
   color: hsl(263, 20%, 82%);
   color: #bdb6c9;
+}
+
+div.column {
+  float: left;
+  margin: 12px;
+}
+#dropzone {
+  width: 600px;
+  height: 20px;
+  border: 2px dotted #bbb;
+  border-radius: 10px;
+  padding: 35px;
+  color: #bbb;
+  text-align: center;
+}
+table {
+  text-align: left;
 }

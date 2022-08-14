@@ -1,4 +1,4 @@
-import { addPublisher } from "../../db/dexie/addPublisher";
+import { addPublisher } from "../../db/addPublisher";
 import { Header } from "../header/header";
 import { Content } from "../main/content";
 import { PublisherForm } from "./publisherForm";

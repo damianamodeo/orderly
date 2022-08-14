@@ -1,4 +1,4 @@
-import { db } from "../../db/dexie/dexie";
+import { db } from "../../db/dexie";
 import { useLiveQuery } from "dexie-react-hooks";
 import { Header } from "../header/header";
 import { Content } from "../main/content";

@@ -4,7 +4,7 @@ export const InputEmail = ({ label, value, action }) => {
       <div className="relative">
         <input
           type="email"
-          id="floating_filled"
+          id={label}
           className="
             peer 
             block w-full 
@@ -33,7 +33,7 @@ export const InputEmail = ({ label, value, action }) => {
           onChange={action}
         />
         <label
-          htmlFor="floating_filled"
+          htmlFor={label}
           className="
             absolute 
             top-4 left-2.5 z-10 

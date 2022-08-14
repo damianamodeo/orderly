@@ -1,4 +1,4 @@
-import { updatePublisher } from "../../db/dexie/updatePublisher";
+import { updatePublisher } from "../../db/updatePublisher";
 import { Header } from "../header/header";
 import { Content } from "../main/content";
 import { PublisherForm } from "./publisherForm";

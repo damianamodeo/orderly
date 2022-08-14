@@ -5,7 +5,7 @@ export const InputSelect = ({ label, options, publisher, value, action }) => {
     <>
       <div className="relative">
         <select
-          id="floating_filled"
+          id={label}
           className="
             focus:ring-0-XXX 
             peer block 
@@ -50,7 +50,7 @@ export const InputSelect = ({ label, options, publisher, value, action }) => {
           )}
         </select>
         <label
-          htmlFor="floating_filled"
+          htmlFor={label}
           className="
             absolute 
             top-4 left-2.5 z-10 
