@@ -1,12 +1,12 @@
 import { PublishersIcon } from "../../icons/publishers";
 
-export const InputSelect = ({ label, options, value, action }) => {
+export const InputSelect = ({ label, options, publisher, value, action }) => {
   return (
     <>
       <div className="relative">
         <select
-          id="underline_select"
-          class="
+          id="floating_filled"
+          className="
             focus:ring-0-XXX 
             peer block 
             w-full 
@@ -28,19 +28,30 @@ export const InputSelect = ({ label, options, value, action }) => {
             dark:text-white 
             dark:focus:border-primaryLight
             "
+          onChange={action}
+          value={value}
         >
-          {options.map(option => (
-            <option value={option.id}>{option.lastName}, {option.firstName}</option>
-          ))}
-          <option value="US"></option>
-          <option value="US">United States</option>
-          <option value="CA">Canada</option>
-          <option value="FR">France</option>
-          <option value="DE">Germany</option>
+          {(publisher.id !== publisher.familyHead)}
+          <option value={publisher.id}>
+            {publisher.lastName}
+            {publisher.firstName && publisher.lastName ? "," : null}{" "}
+            {publisher.firstName}
+          </option>
+          {options?.map(({ id, lastName, firstName }) =>
+            id === publisher.familyHead ? (
+              <option key={id} value={id}  >
+                {lastName}, {firstName}
+              </option>
+            ) : (
+              <option key={id} value={id}>
+                {lastName}, {firstName}
+              </option>
+            )
+          )}
         </select>
         <label
-          for="floating_filled"
-          class="
+          htmlFor="floating_filled"
+          className="
             absolute 
             top-4 left-2.5 z-10 
             origin-[0] 

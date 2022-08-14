@@ -4,7 +4,7 @@ export const InputText = ({ label, value, action }) => {
       <div className="relative">
         <input
           type="text"
-          class="
+          className="
             peer 
             block w-full 
             appearance-none 
@@ -28,12 +28,12 @@ export const InputText = ({ label, value, action }) => {
             "
           placeholder=" "
           value={value}
-          autocomplete="off"
+          autoComplete="off"
           onChange={action}
         />
         <label
-          for="floating_filled"
-          class="
+          htmlFor="floating_filled"
+          className="
             absolute 
             top-4 left-2.5 z-10 
             origin-[0] 

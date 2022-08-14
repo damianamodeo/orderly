@@ -1,6 +1,6 @@
 import { db } from "./dexie";
 
-export const updatePublisher = (publisher, publisherDetails) => {
+export const updatePublisher = (publisher) => {
   db.publishers.update(publisher.id, {
     firstName: publisher.firstName,
     middleName: publisher.middleName,
@@ -17,5 +17,4 @@ export const updatePublisher = (publisher, publisherDetails) => {
     street: publisher.street,
     suburb: publisher.suburb,
   });
-  publisherDetails(publisher);
 };

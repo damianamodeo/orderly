@@ -5,7 +5,7 @@ export const InputEmail = ({ label, value, action }) => {
         <input
           type="email"
           id="floating_filled"
-          class="
+          className="
             peer 
             block w-full 
             appearance-none 
@@ -29,12 +29,12 @@ export const InputEmail = ({ label, value, action }) => {
             "
           placeholder=" "
           value={value}
-          autocomplete="off"
+          autoComplete="off"
           onChange={action}
         />
         <label
-          for="floating_filled"
-          class="
+          htmlFor="floating_filled"
+          className="
             absolute 
             top-4 left-2.5 z-10 
             origin-[0] 

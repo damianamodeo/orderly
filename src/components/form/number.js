@@ -5,7 +5,7 @@ export const InputNumber = ({ label, value, action }) => {
         <input
           type="tel"
           id="floating_filled"
-          class="
+          className="
             peer 
             block w-full 
             appearance-none 
@@ -32,8 +32,8 @@ export const InputNumber = ({ label, value, action }) => {
           onChange={action}
         />
         <label
-          for="floating_filled"
-          class="
+          htmlFor="floating_filled"
+          className="
             absolute 
             top-4 left-2.5 z-10 
             origin-[0] 

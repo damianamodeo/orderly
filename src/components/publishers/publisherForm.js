@@ -11,34 +11,31 @@ import { db } from "../../db/dexie/dexie";
 import { useLiveQuery } from "dexie-react-hooks";
 
 export const PublisherForm = ({ publisher }) => {
-  // const heads = useLiveQuery(() =>
-  //   db.publishers.filter(publisher =>{
-  //     publisher.familyHead === publisher.id || publisher.familyHead === undefined
-  //   }).toArray()
-  // );
-  const publishers = useLiveQuery(() =>
-    db.publishers.orderBy("[lastName+firstName]").toArray()
+  const heads = useLiveQuery(() =>
+    db.publishers.filter(publisher =>{
+      return publisher.familyHead == publisher.id
+    }).toArray()
   );
 
   const formSectionStyles = "flex  bg-white p-2 m-2";
   const sectionLabelStyles = "text-jwGrey p-1 m-1 font-bold text-lg basis-1/4";
   const inputStyles = "grow grid gap-2 landscape:grid-cols-2 md:grid-cols-2";
 
-  const [firstName, setFirstName] = useState(publisher.firstName);
-  const [middleName, setMiddleName] = useState(publisher.middleName);
-  const [lastName, setLastName] = useState(publisher.lastName);
-  const [otherName, setOtherName] = useState(publisher.otherName);
-  const [familyHead, setFamilyHead] = useState(publisher.familyHead);
-  const [birthDate, setBirthDate] = useState(publisher.birthDate);
-  const [baptismDate, setBaptismDate] = useState(publisher.baptismDate);
-  const [homePhone, setHomePhone] = useState(publisher.homePhone);
-  const [mobilePhone, setMobilePhone] = useState(publisher.mobilePhone);
-  const [personalEmail, setPersonalEmail] = useState(publisher.personalEmail);
-  const [jwpubEmail, setJwpubEmail] = useState(publisher.jwpubEmail);
-  const [unitNumber, setUnitNumber] = useState(publisher.unitNumber);
-  const [houseNumber, setHouseNumber] = useState(publisher.houseNumber);
-  const [street, setStreet] = useState(publisher.street);
-  const [suburb, setSuburb] = useState(publisher.suburb);
+  const [firstName, setFirstName] = useState(publisher.firstName || "");
+  const [middleName, setMiddleName] = useState(publisher.middleName || "");
+  const [lastName, setLastName] = useState(publisher.lastName || "");
+  const [otherName, setOtherName] = useState(publisher.otherName || "");
+  const [familyHead, setFamilyHead] = useState(publisher.familyHead || "");
+  const [birthDate, setBirthDate] = useState(publisher.birthDate || "");
+  const [baptismDate, setBaptismDate] = useState(publisher.baptismDate || "");
+  const [homePhone, setHomePhone] = useState(publisher.homePhone || "");
+  const [mobilePhone, setMobilePhone] = useState(publisher.mobilePhone || "");
+  const [personalEmail, setPersonalEmail] = useState(publisher.personalEmail || "");
+  const [jwpubEmail, setJwpubEmail] = useState(publisher.jwpubEmail || "");
+  const [unitNumber, setUnitNumber] = useState(publisher.unitNumber || "");
+  const [houseNumber, setHouseNumber] = useState(publisher.houseNumber || "");
+  const [street, setStreet] = useState(publisher.street || "");
+  const [suburb, setSuburb] = useState(publisher.suburb || "");
   return (
     <>
       <div className="grid ">
@@ -174,9 +171,10 @@ export const PublisherForm = ({ publisher }) => {
           <InputSelect
             label="Family Head"
             value={familyHead}
-            options={publishers}
+            publisher={publisher}
+            options={heads}
             action={(e) => {
-              publisher.familyHead = e.target.value;
+              publisher.familyHead = parseInt(e.target.value);
               setFamilyHead(e.target.value);
             }}
           />
