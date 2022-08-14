@@ -1,9 +1,10 @@
-export const InputText = ({ label, value, action }) => {
+export const InputEmail = ({ label, value, action }) => {
   return (
     <>
       <div className="relative">
         <input
-          type="text"
+          type="email"
+          id="floating_filled"
           class="
             peer 
             block w-full 
@@ -20,7 +21,7 @@ export const InputText = ({ label, value, action }) => {
             focus:border-b-4 
             focus:border-primary
             focus:outline-none 
-            focus:ring-0-XXX
+            focus:ring-0 
             dark:border-gray-600 
             dark:bg-gray-700 
             dark:text-white 

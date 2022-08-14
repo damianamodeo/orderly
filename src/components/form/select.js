@@ -1,36 +1,43 @@
-export const InputText = ({ label, value, action }) => {
+import { PublishersIcon } from "../../icons/publishers";
+
+export const InputSelect = ({ label, options, value, action }) => {
   return (
     <>
       <div className="relative">
-        <input
-          type="text"
+        <select
+          id="underline_select"
           class="
-            peer 
-            block w-full 
+            focus:ring-0-XXX 
+            peer block 
+            w-full 
             appearance-none 
-            border-0 
+            border-0
             border-b-2
             border-bgDark
-            bg-bgLightest
+            bg-bgLightest 
             px-2.5 
             pb-2.5 
             pt-5 
             text-lg 
             text-gray-900 
-            focus:border-b-4 
-            focus:border-primary
-            focus:outline-none 
-            focus:ring-0-XXX
+            focus:border-b-4
+            focus:border-primary 
+            focus:outline-none
             dark:border-gray-600 
             dark:bg-gray-700 
             dark:text-white 
             dark:focus:border-primaryLight
             "
-          placeholder=" "
-          value={value}
-          autocomplete="off"
-          onChange={action}
-        />
+        >
+          {options.map(option => (
+            <option value={option.id}>{option.lastName}, {option.firstName}</option>
+          ))}
+          <option value="US"></option>
+          <option value="US">United States</option>
+          <option value="CA">Canada</option>
+          <option value="FR">France</option>
+          <option value="DE">Germany</option>
+        </select>
         <label
           for="floating_filled"
           class="

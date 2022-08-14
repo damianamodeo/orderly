@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 
-export const Menubar = () => {
+export const Menubar = ({ menuList }) => {
   const select = (e) => {
     let menuItems = document.querySelectorAll(".item");
     menuItems.forEach((item) =>
-      item.classList.remove("font-bold", "text-primary")
+      item.classList.remove("font-extrabold", "text-primary")
     );
-    e.target.classList.add("font-bold", "text-primary");
+    e.target.classList.add("font-extrabold", "text-primary");
     let marker = document.querySelector("#marker");
     marker.style.left = e.target.offsetLeft + "px";
     marker.style.width = e.target.offsetWidth + "px";
@@ -21,91 +21,56 @@ export const Menubar = () => {
     const menu = document.querySelector(".menuBar");
     menu.addEventListener("wheel", changeScroll);
 
-    return () => {
-      const menu = document.querySelector(".menuBar");
-      menu.addEventListener("wheel", changeScroll);
-    };
+    return () => {};
   });
 
   return (
     <>
       <div
         className="
-        menuBar
-        relative
-        flex
-        h-[40px]
-        overflow-x-hidden
-
-        "
+          menuBar
+          h-10
+          fixed
+          top-navW
+          z-40
+          pr-8
+          flex
+          w-full
+          touch-auto
+          content-center
+          overflow-x-auto
+          overflow-y-hidden
+          border
+          border-y-bgDark
+          bg-white
+          px-2
+          md:left-navW
+          "
       >
         <div
+          id="marker"
           className="
           absolute 
           left-0 
           bottom-0 
-          h-1 
+          h-[2px] 
           bg-primary
           transition-all
+          duration-300
           "
-          id="marker"
         ></div>
-        <div
-          className="item relative m-2 whitespace-nowrap"
-          id="item-1"
-          onClick={(e) => select(e)}
-        >
-          Osana
-        </div>
-        <div
-          className="item relative m-2 whitespace-nowrap"
-          id="item-2"
-          onClick={(e) => select(e)}
-        >
-          Damo
-        </div>
-        <div
-          className="item relative m-2 whitespace-nowrap"
-          id="item-3"
-          onClick={(e) => select(e)}
-        >
-          Watchtower
-        </div>
-        <div
-          className="item relative m-2 whitespace-nowrap"
-          id="item-3"
-          onClick={(e) => select(e)}
-        >
-          Watchtower
-        </div>
-        <div
-          className="item relative m-2 whitespace-nowrap"
-          id="item-3"
-          onClick={(e) => select(e)}
-        >
-          Watchtower
-        </div>
-        <div
-          className="item relative m-2 whitespace-nowrap"
-          id="item-3"
-          onClick={(e) => select(e)}
-        >
-          Watchtower
-        </div>
-        <div
-          className="item relative m-2 whitespace-nowrap"
-          id="item-4"
-          onClick={(e) => select(e)}
-        >
-          Really Long Item
-        </div>
-        <div
-          className="item relative m-2 whitespace-nowrap"
-          id="item-5"
-          onClick={(e) => select(e)}
-        >
-          sm
-        </div>
+
+        {menuList?.map((item) => (
+          <div 
+            key={item.id}
+            className="m-2"
+          >
+            <div className={`item relative`} onClick={(e) => select(e)}>
+              {item.label}
+            </div>
+            <div className="-z-1 font-extrabold invisible">{item.label}</div>
+          </div>
+        ))}
       </div>
     </>
   );

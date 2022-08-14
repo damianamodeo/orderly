@@ -6,6 +6,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        "primaryLightest": "#bdb6c9",
+        "primaryLighter": "#744cae",
         "primaryLight": "#744cae",
         "primary": "#5b3c88",
         "primaryD": "#c1a7e2",
@@ -29,6 +31,13 @@ module.exports = {
       },
       fontFamily: {
         noto: "'Noto Sans', sans-serif",
+      },
+      fontSize: {
+        "header": "1.05rem",
+        "navbar": "0.6rem"
+      },
+      spacing: {
+        "navW": "3.1rem",
       }
     },
   },

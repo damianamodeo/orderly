@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Content } from "../main/content";
 import { PublisherList } from "./publisherList";
 import { PublisherEdit } from "./publisherEdit";
 import { PublisherDetails } from "./publisherDetails";

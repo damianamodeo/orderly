@@ -4,6 +4,7 @@ import {
   formatHomeNumber,
 } from "../../services/formatting/phoneNumbers";
 import { Content } from "../main/content";
+import { MessageIcon } from "../../icons/message";
 
 export const PublisherDetails = ({
   publisher,
@@ -17,6 +18,7 @@ export const PublisherDetails = ({
   return (
     <>
       <Content bgColor={"bg-bgLightest"}>
+        <div className="grid landscape:grid-cols-2">
         {publisher.mobilePhone || publisher.homePhone ? (
           <div className={sectionStyle}>
             Phone
@@ -29,7 +31,9 @@ export const PublisherDetails = ({
                   {formatMobileNumber(publisher.mobilePhone)}
                 </a>
                 <div className="flex space-x-2">
-                  <a href={`sms://${publisher.mobilePhone}`}>Message</a>
+                  <a href={`sms://${publisher.mobilePhone}`}>
+                    <MessageIcon/>
+                  </a>
                 </div>
               </div>
             ) : null}
@@ -92,6 +96,7 @@ export const PublisherDetails = ({
             </div>
           </div>
         ) : null}
+        </div>
       </Content>
 
       <Header
