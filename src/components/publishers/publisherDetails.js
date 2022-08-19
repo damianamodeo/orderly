@@ -100,16 +100,16 @@ export const PublisherDetails = ({
       </Content>
 
       <Header
-        headerLeft={<div onClick={publisherList}>Back</div>}
+        headerLeft={<div className="text-primary text-header" onClick={publisherList}>Back</div>}
         title={
-          <div>
+          <div className="font-bold text-header">
             {publisher.otherName
               ? `${publisher.otherName}`
               : publisher.firstName}{" "}
             {publisher.middleName == publisher.otherName ? null : publisher.middleName} {publisher.lastName}
           </div>
         }
-        headerRight={<div onClick={() => publisherEdit(publisher)}>Edit</div>}
+        headerRight={<div className="text-primary text-header" onClick={() => publisherEdit(publisher)}>Edit</div>}
       />
     </>
   );

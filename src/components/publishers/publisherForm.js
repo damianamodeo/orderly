@@ -12,7 +12,7 @@ import { useLiveQuery } from "dexie-react-hooks";
 
 export const PublisherForm = ({ publisher }) => {
   const heads = useLiveQuery(() =>
-    db.publishers.filter(publisher =>{
+    db.publishers.filter(publisher => {
       return publisher.familyHead == publisher.id
     }).toArray()
   );
@@ -167,17 +167,29 @@ export const PublisherForm = ({ publisher }) => {
           </div>
         </div>
         <div className={`${formSectionStyles} col-start-1`}>
-          <div className={sectionLabelStyles}>Family</div>
-          <InputSelect
-            label="Family Head"
-            value={familyHead}
-            publisher={publisher}
-            options={heads}
-            action={(e) => {
-              publisher.familyHead = parseInt(e.target.value);
-              setFamilyHead(e.target.value);
-            }}
-          />
+          <div className={sectionLabelStyles}>Details</div>
+          <div className={`${inputStyles}  `}>
+            <InputSelect
+              label="Family Head"
+              value={familyHead}
+              publisher={publisher}
+              options={heads}
+              action={(e) => {
+                publisher.familyHead = parseInt(e.target.value);
+                setFamilyHead(e.target.value);
+              }}
+            />
+            <InputSelect
+              label="Group"
+              value={familyHead}
+              publisher={publisher}
+              options={heads}
+              action={(e) => {
+                publisher.familyHead = parseInt(e.target.value);
+                setFamilyHead(e.target.value);
+              }}
+            />
+          </div>
         </div>
       </div>
     </>

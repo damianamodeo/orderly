@@ -11,12 +11,12 @@ export const PublisherList = ({ publisherDetails, publisherAdd }) => {
   );
 
   const menuList = [
-      {label: "ACTIVE", id: 1},
-      {label: "GROUPS", id: 2},
-      {label: "BROTHERS", id: 3},
-      {label: "FAMILY", id: 4},
-      {label: "INACTIVE", id: 5},
-      {label: "ALL", id: 6},
+    { label: "ACTIVE", id: 1 },
+    { label: "GROUPS", id: 2 },
+    { label: "BROTHERS", id: 3 },
+    { label: "FAMILY", id: 4 },
+    { label: "INACTIVE", id: 5 },
+    { label: "ALL", id: 6 },
   ];
 
   return (
@@ -25,7 +25,7 @@ export const PublisherList = ({ publisherDetails, publisherAdd }) => {
         headerLeft={<div></div>}
         title={<div className="font-bold text-header">Publishers</div>}
         headerRight={
-          <div
+          <div className="text-primary text-header"
             onClick={() => {
               publisherAdd();
             }}

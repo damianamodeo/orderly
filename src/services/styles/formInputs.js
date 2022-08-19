@@ -1,0 +1,23 @@
+export const baseInputStyle=`
+  focus:ring-0-XXX
+  peerblock
+  w-full
+  appearance-none
+  border-0
+  border-b-2
+  border-bgDark
+  bg-bgLightest
+  px-2.5
+  pb-2.5
+  pt-5
+  text-lg
+  font-semibold
+  text-jwBlack
+  focus:border-b-4
+  focus:border-primary
+  focus:outline-none
+  dark:border-gray-600-XXX
+  dark:bg-gray-700-XXX
+  dark:text-white-XXX
+  dark:focus:border-primaryLight-XXX
+`

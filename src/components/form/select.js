@@ -1,4 +1,5 @@
 import { PublishersIcon } from "../../icons/publishers";
+import { baseInputStyle } from "../../services/styles/formInputs";
 
 export const InputSelect = ({ label, options, publisher, value, action }) => {
   return (
@@ -6,28 +7,7 @@ export const InputSelect = ({ label, options, publisher, value, action }) => {
       <div className="relative">
         <select
           id={label}
-          className="
-            focus:ring-0-XXX 
-            peer block 
-            w-full 
-            appearance-none 
-            border-0
-            border-b-2
-            border-bgDark
-            bg-bgLightest 
-            px-2.5 
-            pb-2.5 
-            pt-5 
-            text-lg 
-            text-gray-900 
-            focus:border-b-4
-            focus:border-primary 
-            focus:outline-none
-            dark:border-gray-600 
-            dark:bg-gray-700 
-            dark:text-white 
-            dark:focus:border-primaryLight
-            "
+          className={baseInputStyle}
           onChange={action}
           value={value}
         >

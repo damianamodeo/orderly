@@ -11,10 +11,10 @@ export const PublisherAdd = ({ publisherList }) => {
         <PublisherForm publisher={publisher} />
       </Content>
       <Header
-        headerLeft={<div onClick={publisherList}>Cancel</div>}
-        title={<div>Add Publisher</div>}
+        headerLeft={<div className="text-primary text-header" onClick={publisherList}>Cancel</div>}
+        title={<div className="font-bold text-header">Add Publisher</div>}
         headerRight={
-          <div onClick={() => addPublisher(publisher, publisherList)}>Done</div>
+          <div className="text-primary text-header" onClick={() => addPublisher(publisher, publisherList)}>Done</div>
         }
       />
     </>
