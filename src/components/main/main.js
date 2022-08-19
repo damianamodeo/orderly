@@ -5,7 +5,7 @@ import { Screen } from "./screen";
 export const Main = () => {
   return (
     <>
-      <Screen />
+      <Test />
     </>
   );
 };

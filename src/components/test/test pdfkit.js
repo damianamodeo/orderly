@@ -8,10 +8,10 @@ import { db } from "../../db/dexie";
 import download from "downloadjs";
 import { exportStore } from "../../db/exportStore";
 import { importStore } from "../../db/importStore";
-// import PDFDocument from "../../services/pdf/pdfkit.standalone.js";
+import PDFDocument from "../../services/pdf/pdfkit.standalone.js";
 import blobStream from "../../services/pdf/blob-stream.js";
 
-const makePDF = (publishers) => {
+const makePDF = (publishers, downloadPDF) => {
   let line = 15;
   const lineSpacing = 20;
   const doc = new PDFDocument({ size: "A4" });
@@ -113,62 +113,51 @@ const makePDF = (publishers) => {
 
   stream.on("finish", function () {
     blob = stream.toBlob("application/pdf");
-    // const url = stream.toBlobURL("application/pdf");
-    // const iframe = document.querySelector("iframe");
-    // iframe.src = url;
-    download();
+    const url = stream.toBlobURL("application/pdf");
+    const iframe = document.querySelector("iframe");
+    iframe.src = url;
+    // if (downloadPDF)  { download()}
   });
-
-
-
 };
 
-export const Dashboard = () => {
+export const Test = () => {
   const publishers = useLiveQuery(() =>
+    db.publishers.orderBy("[lastName+firstName]").toArray()
+  );
+  const heads = useLiveQuery(() =>
+    db.publishers
+      .orderBy("[lastName+firstName]")
+      .filter((p) => p.id === p.familyHead)
+      .toArray()
+  );
+  const members = useLiveQuery(() =>
     db.publishers.orderBy("[lastName+firstName]").toArray()
   );
 
   return (
     <>
-      <Header title="Dashboard 4" />
-      <Content bgColor="bg-red-100">
-        <div
-          className="
-            m-2 
-            font-semibold 
-            text-secondary
-          "
-        >
-          <div
-            className="bg-white w-24 m-8 h-12"
-            onClick={() => {
-              exportStore("publishers");
-            }}
-          >
-            Export
-          </div>
-          <form className="">
-            <input className="" type="file" id="import-publishers" />
-            <button
-              className="bg-white w-24 m-8 h-12"
-              onClick={() => {
-                importStore("publishers");
-              }}
-            >
-              Import
-            </button>
-          </form>
-        </div>
-        <div
-          id="makepdf"
-          className="bg-white w-24 m-8 h-12"
+      <div>
+        PDF Output{" "}
+        <button
           onClick={() => {
-            makePDF(publishers);
+            makePDF(publishers, false);
           }}
         >
-          Make PDF
-        </div>
-      </Content>
+          Download
+        </button>
+      </div>
+      <iframe width="100%" height="800px"></iframe>
+      {makePDF(publishers)}
+
+      <div
+        id="makepdf"
+        className="fixed bottom-2 h-12"
+        onClick={() => {
+          makePDF(publishers, true);
+        }}
+      >
+        Make PDF
+      </div>
     </>
   );
 };
