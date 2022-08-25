@@ -9,10 +9,12 @@ import { InputEmail } from "../form/email";
 import { InputSelect } from "../form/select";
 import { db } from "../../db/dexie";
 import { useLiveQuery } from "dexie-react-hooks";
+import { toTitleCase } from "../../services/formatting/letterCase";
+
 
 export const PublisherForm = ({ publisher }) => {
   const heads = useLiveQuery(() =>
-    db.publishers.filter(publisher => {
+    db.publishers.orderBy("[lastName+firstName]").filter(publisher => {
       return publisher.familyHead == publisher.id
     }).toArray()
   );
@@ -46,32 +48,32 @@ export const PublisherForm = ({ publisher }) => {
               label="First"
               value={firstName}
               action={(e) => {
-                publisher.firstName = e.target.value;
-                setFirstName(e.target.value);
+                publisher.firstName = toTitleCase(e.target.value.trim());
+                setFirstName(toTitleCase(e.target.value));
               }}
             />
             <InputText
               label="Middle"
               value={middleName}
               action={(e) => {
-                publisher.middleName = e.target.value;
-                setMiddleName(e.target.value);
+                publisher.middleName = toTitleCase(e.target.value.trim());
+                setMiddleName(toTitleCase(e.target.value));
               }}
             />
             <InputText
               label="Last"
               value={lastName}
               action={(e) => {
-                publisher.lastName = e.target.value;
-                setLastName(e.target.value);
+                publisher.lastName = toTitleCase(e.target.value.trim());
+                setLastName(toTitleCase(e.target.value));
               }}
             />
             <InputText
               label="Display   "
               value={otherName}
               action={(e) => {
-                publisher.otherName = e.target.value;
-                setOtherName(e.target.value);
+                publisher.otherName = toTitleCase(e.target.value.trim());
+                setOtherName(toTitleCase(e.target.value));
               }}
             />
           </div>
@@ -110,7 +112,7 @@ export const PublisherForm = ({ publisher }) => {
               label="Personal"
               value={personalEmail}
               action={(e) => {
-                publisher.personalEmail = e.target.value;
+                publisher.personalEmail = e.target.value.trim();
                 setPersonalEmail(e.target.value);
               }}
             />
@@ -118,7 +120,7 @@ export const PublisherForm = ({ publisher }) => {
               label="Jwpub"
               value={jwpubEmail}
               action={(e) => {
-                publisher.jwpubEmail = e.target.value;
+                publisher.jwpubEmail = e.target.value.trim();
                 setJwpubEmail(e.target.value);
               }}
             />
@@ -133,7 +135,7 @@ export const PublisherForm = ({ publisher }) => {
                 label="Unit"
                 value={unitNumber}
                 action={(e) => {
-                  publisher.unitNumber = e.target.value;
+                  publisher.unitNumber = e.target.value.trim();
                   setUnitNumber(e.target.value);
                 }}
               />
@@ -141,7 +143,7 @@ export const PublisherForm = ({ publisher }) => {
                 label="House"
                 value={houseNumber}
                 action={(e) => {
-                  publisher.houseNumber = e.target.value;
+                  publisher.houseNumber = e.target.value.trim();
                   setHouseNumber(e.target.value);
                 }}
               />
@@ -150,8 +152,8 @@ export const PublisherForm = ({ publisher }) => {
               label="Street"
               value={street}
               action={(e) => {
-                publisher.street = e.target.value;
-                setStreet(e.target.value);
+                publisher.street = toTitleCase(e.target.value.trim());
+                setStreet(toTitleCase(e.target.value));
               }}
             />
             <div className="md:col-start-2 landscape:col-start-2 landscape:md:col-start-3">
@@ -159,8 +161,8 @@ export const PublisherForm = ({ publisher }) => {
                 label="Suburb"
                 value={suburb}
                 action={(e) => {
-                  publisher.suburb = e.target.value;
-                  setSuburb(e.target.value);
+                  publisher.suburb = toTitleCase(e.target.value.trim());
+                  setSuburb(toTitleCase(e.target.value));
                 }}
               />
             </div>

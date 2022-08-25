@@ -37,6 +37,9 @@ export const Navbar = ({ dashboardScreen, publisherScreen, active }) => {
         <Icon label="Publishers" active={active} action={publisherScreen}>
           <PublishersIcon active={active} />
         </Icon>
+        <Icon label="Settings" active={active} action={publisherScreen}>
+          <PublishersIcon active={active} />
+        </Icon>
       </div>
     </>
   );

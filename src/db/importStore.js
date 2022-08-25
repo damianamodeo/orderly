@@ -6,10 +6,11 @@ export const importStore = (store) => {
   let file = document.querySelector("#import-publishers").files[0];
   let reader = new FileReader();
   reader.onloadend = () => {
-    console.log(reader.result)
+    console.log(reader)
     clearStore(db.backendDB(), store);
     importFromJsonString(db.backendDB(), reader.result, (err) => {});
 
   };
   reader.readAsText(file);
+  console.log("Store Imported")
 };

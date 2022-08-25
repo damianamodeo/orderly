@@ -26,7 +26,10 @@ const makePDF = (publishers, downloadPDF) => {
           .lineTo(585, line)
           .stroke(),
         (line = line + lineSpacing - 10),
-        doc.fontSize(20).fillColor("#942926").text(`${head.lastName.toUpperCase()}`, 20, line),
+        doc
+          .fontSize(20)
+          .fillColor("#942926")
+          .text(`${head.lastName.toUpperCase()}`, 20, line),
         doc
           .fontSize(14)
           .text(`${head.homePhone ? `${head.homePhone}` : ""} `, 190, line),
@@ -39,9 +42,8 @@ const makePDF = (publishers, downloadPDF) => {
             250,
             line,
             {
-              
-            width: 330,
-            align: "right"
+              width: 330,
+              align: "right",
             }
           ),
         (line = line + lineSpacing),
@@ -61,7 +63,7 @@ const makePDF = (publishers, downloadPDF) => {
           {
             link: `tel://${head.personalEmail}`,
             width: 330,
-            align: "right"
+            align: "right",
           }
         ),
         (line = line + lineSpacing),
@@ -85,7 +87,7 @@ const makePDF = (publishers, downloadPDF) => {
                 {
                   link: `tel://${member.personalEmail}`,
                   width: 330,
-                  align: "right"
+                  align: "right",
                 }
               ),
               (line = line + lineSpacing)
