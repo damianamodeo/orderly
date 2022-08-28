@@ -2,7 +2,7 @@ export const Icon = ({ children, label, action, active }) => {
   return (
     <>
       <div
-        className="flex flex-col items-center justify-center gap-1 space-x-2 md:h-navW landscape:flex-row "
+        className="flex flex-col items-center justify-center gap-1 md:h-navW landscape:flex-row "
         onClick={action}
       >
         {children}

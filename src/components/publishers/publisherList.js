@@ -1,15 +1,28 @@
-import { db } from "../../db/dexie";
+import { db } from "../../services/db/dexie";
 import { useLiveQuery } from "dexie-react-hooks";
 import { Header } from "../header/header";
 import { Content } from "../main/content";
 import { AddIcon } from "../../icons/add";
-import { Menubar } from "../main/menubar";
+import { useState } from "react";
+import { Search } from "../form/search";
+import { PublisherListAll } from "./publisherListAll";
 
 export const PublisherList = ({ publisherDetails, publisherAdd }) => {
+  // let searchString = new RegExp("mi", "i")
+
+  const [searchString, setSearchString] = useState("");
+
   const publishers = useLiveQuery(() =>
-    db.publishers.orderBy("[lastName+firstName]").toArray()
+    db.publishers
+      .orderBy("[lastName+firstName]")
+      .filter((publisher) => {
+        let str = `${publisher.firstName} ${publisher.lastName} ${publisher.middleName} ${publisher.otherName}`;
+        return str.match(searchString);
+      })
+      .toArray()
   );
 
+  
   const menuList = [
     { label: "ACTIVE", id: 1 },
     { label: "GROUPS", id: 2 },
@@ -23,9 +36,10 @@ export const PublisherList = ({ publisherDetails, publisherAdd }) => {
     <>
       <Header
         headerLeft={<div></div>}
-        title={<div className="font-bold text-header">Publishers</div>}
+        title={<div className="text-header font-bold">Publishers</div>}
         headerRight={
-          <div className="text-primary text-header"
+          <div
+            className="text-header text-primary"
             onClick={() => {
               publisherAdd();
             }}
@@ -36,34 +50,12 @@ export const PublisherList = ({ publisherDetails, publisherAdd }) => {
       />
       {/* <Menubar menuList={menuList} /> */}
       <Content bgColor={"bg-bgLightest"}>
-        <div
-          className="
-            -z-1 
-            my-12
-            px-2
-            grid
-            grid-cols-1
-            sm:grid-cols-2
-            lg:grid-cols-3
-            "
-        >
-          {publishers?.map((publisher) => (
-            <div
-              key={publisher.id}
-              className="
-                m-1
-                bg-white 
-                px-2
-                py-6
-              "
-              onClick={() => {
-                publisherDetails(publisher);
-              }}
-            >
-              {publisher.lastName}, {publisher.firstName}
-            </div>
-          ))}
-        </div>
+        <Search
+          action={(e) => {
+            setSearchString(new RegExp(e.target.value, "i"));
+          }}
+        />
+        <PublisherListAll searchString={searchString} publisherDetails={publisherDetails}/>
       </Content>
     </>
   );

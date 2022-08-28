@@ -5,13 +5,13 @@ export const PublishersIcon = ({ active }) => {
         viewBox="0 0 32 32"
         className={`fill-none  h-6 w-6`}
       >
-        <g className={active == "Publishers" ? "fill-primaryLightest" : "fill-transparent"}>
+        <g className={active === "Publishers" ? "fill-primaryLightest" : "fill-transparent"}>
           <circle cx="8" cy="6" r="2.5"  />
           <circle cx="17" cy="4" r="2.5"  />
           <circle cx="26" cy="5.9" r="2.5"  />
           <path d="m5.5 30.6 24-.1v-9.9s1-.3 1-1v-6.2s.5-3-2.2-3l-7 .1s-.4-2-2.5-2h-4.2s-2.2-.3-2.2 2H5.8s-2.3.2-2.3 2.4v7.5l-2 .1v3h4z" />
         </g>
-        <g fill="none" strokeWidth="1" className={active == "Publishers" ? "stroke-primary" : "stroke-jwBlack"}>
+        <g fill="none" strokeWidth="1.1" className={active === "Publishers" ? "stroke-primary" : "stroke-jwBlack"}>
           <circle
             cx="8"
             cy="6"

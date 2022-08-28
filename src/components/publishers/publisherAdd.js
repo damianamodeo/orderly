@@ -1,4 +1,4 @@
-import { addPublisher } from "../../db/addPublisher";
+import { addPublisher } from "../../services/db/addPublisher";
 import { Header } from "../header/header";
 import { Content } from "../main/content";
 import { PublisherForm } from "./publisherForm";

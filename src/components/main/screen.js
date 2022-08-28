@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Navbar } from "../navbar/navbar";
 import { Dashboard } from "../dashboard/dashboard";
 import { Publishers } from "../publishers/publishers";
+import { Settings } from "../settings/settings";
 
 export const Screen = () => {
   const dashboardScreen = () => {
@@ -14,6 +15,11 @@ export const Screen = () => {
     setScreen(<Publishers />);
   };
 
+  const settingsScreen = () => {
+    setActive("Settings");
+    setScreen(<Settings />);
+  };
+
   const [page, setScreen] = useState(<Publishers />);
   const [active, setActive] = useState("Publishers");
 
@@ -23,6 +29,7 @@ export const Screen = () => {
         active={active}
         dashboardScreen={dashboardScreen}
         publisherScreen={publisherScreen}
+        settingsScreen={settingsScreen}
       />
       {page}
     </>

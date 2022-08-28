@@ -7,7 +7,7 @@ import { InputText } from "../form/text";
 import { InputNumber } from "../form/number";
 import { InputEmail } from "../form/email";
 import { InputSelect } from "../form/select";
-import { db } from "../../db/dexie";
+import { db } from "../../services/db/dexie";
 import { useLiveQuery } from "dexie-react-hooks";
 import { toTitleCase } from "../../services/formatting/letterCase";
 

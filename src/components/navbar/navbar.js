@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { DashboardIcon } from "../../icons/dashboard";
 import { PublishersIcon } from "../../icons/publishers";
+import { SettingsIcon } from "../../icons/settings";
 import { Icon } from "./icons";
 
-export const Navbar = ({ dashboardScreen, publisherScreen, active }) => {
+export const Navbar = ({ dashboardScreen, publisherScreen, settingsScreen, active }) => {
   return (
     <>
       <div
@@ -16,6 +17,7 @@ export const Navbar = ({ dashboardScreen, publisherScreen, active }) => {
           w-full 
           items-end
           justify-around
+          
           border-t 
           border-bgDark 
           bg-bg
@@ -37,8 +39,8 @@ export const Navbar = ({ dashboardScreen, publisherScreen, active }) => {
         <Icon label="Publishers" active={active} action={publisherScreen}>
           <PublishersIcon active={active} />
         </Icon>
-        <Icon label="Settings" active={active} action={publisherScreen}>
-          <PublishersIcon active={active} />
+        <Icon label="Settings" active={active} action={settingsScreen}>
+          <SettingsIcon active={active} />
         </Icon>
       </div>
     </>
