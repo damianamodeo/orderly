@@ -19,6 +19,7 @@ export const Navbar = ({ dashboardScreen, publisherScreen, settingsScreen, activ
           
           border-t 
           border-bgDark 
+          dark:border-bgDarkD
           bg-bg
           dark:bg-bgD
           md:h-screen 

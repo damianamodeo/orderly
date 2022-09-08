@@ -7,6 +7,7 @@ import { Content } from "../../main/content";
 import { MessageIcon } from "../../../icons/other/message";
 import { Heading } from "../../text/heading";
 import { Card } from "../../../temp/components/card";
+import { style } from "../../../icons/header/style";
 
 export const PublisherDetails = ({
   publisher,
@@ -102,7 +103,7 @@ export const PublisherDetails = ({
 
       <Header
         headerLeft={
-          <div className="text-header text-primary" onClick={publisherList}>
+          <div className={style} onClick={publisherList}>
             Back
           </div>
         }
@@ -119,7 +120,7 @@ export const PublisherDetails = ({
         }
         headerRight={
           <div
-            className="text-header text-primary"
+            className={style}
             onClick={() => publisherEdit(publisher)}
           >
             Edit

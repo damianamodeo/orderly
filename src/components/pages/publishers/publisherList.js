@@ -48,14 +48,14 @@ export const PublisherList = ({ publisherDetails, publisherAdd }) => {
         }
       />
       {/* <Menubar menuList={menuList} /> */}
-      <div className="">
-        <Search
-          action={(e) => {
-            setSearchString(new RegExp(e.target.value, "i"));
-          }}
-        />
-      </div>
       <Content bgColor={"bg-bgLightest dark:bg-black"}>
+        <div className="sticky top-0 -mx-2">
+          <Search
+            action={(e) => {
+              setSearchString(new RegExp(e.target.value, "i"));
+            }}
+          />
+        </div>
         <PublisherListAll
           searchString={searchString}
           publisherDetails={publisherDetails}

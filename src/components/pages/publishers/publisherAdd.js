@@ -3,19 +3,20 @@ import { Header } from "../../main/header";
 import { Content } from "../../main/content";
 import { PublisherForm } from "./publisherForm";
 import { Heading } from "../../text/heading";
+import { style } from "../../../icons/header/style";
 
 export const PublisherAdd = ({ publisherList }) => {
   const publisher = {};
   return (
     <>
-      <Content bgColor={"bg-bgLightest"}>
+      <Content bgColor={"bg-bgLightest dark:bg-black"}>
         <PublisherForm publisher={publisher} />
       </Content>
       <Header
-        headerLeft={<div className="text-primary text-header" onClick={publisherList}>Cancel</div>}
+        headerLeft={<div className={style} onClick={publisherList}>Cancel</div>}
         title={<Heading >Add Publisher</Heading>}
         headerRight={
-          <div className="text-primary text-header" onClick={() => addPublisher(publisher, publisherList)}>Done</div>
+          <div className={style} onClick={() => addPublisher(publisher, publisherList)}>Done</div>
         }
       />
     </>

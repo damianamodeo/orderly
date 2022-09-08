@@ -7,7 +7,7 @@ export const style = {
     border-0 
     border-b-2 
     border-gray-300 
-    bg-bgLight 
+    bg-bgLightest 
     px-2.5 
     pb-2.5 
     pt-5 
@@ -18,7 +18,7 @@ export const style = {
     focus:outline-none 
     focus:ring-0 
     dark:border-gray-600 
-    dark:bg-gray-700 
+    dark:bg-black
     dark:text-white 
     dark:focus:border-primaryD `,
   label: 
@@ -39,5 +39,5 @@ export const style = {
     peer-focus:scale-75 
     peer-focus:text-primary 
     dark:text-gray-400 
-    peer-focus:dark:text-blue-500 `,
+    peer-focus:dark:text-primaryD `,
 };
