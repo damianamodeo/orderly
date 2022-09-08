@@ -1,0 +1,1 @@
+export const style = "h-6 w-6 text-primary dark:text-primaryD"

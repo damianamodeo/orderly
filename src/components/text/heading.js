@@ -1,5 +1,5 @@
 export const Heading = ({children}) => {
   return (
-    <div className="">{children}</div>
+    <span className="text-black dark:text-white font-bold font-noto">{children}</span>
   )
 }
