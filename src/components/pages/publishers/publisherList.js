@@ -23,7 +23,6 @@ export const PublisherList = ({ publisherDetails, publisherAdd }) => {
   //     .toArray()
   // );
 
-  
   // const menuList = [
   //   { label: "ACTIVE", id: 1 },
   //   { label: "GROUPS", id: 2 },
@@ -49,13 +48,18 @@ export const PublisherList = ({ publisherDetails, publisherAdd }) => {
         }
       />
       {/* <Menubar menuList={menuList} /> */}
-      <Content bgColor={"bg-bgLightest dark:bg-black"}>
+      <div className="">
         <Search
           action={(e) => {
             setSearchString(new RegExp(e.target.value, "i"));
           }}
         />
-        <PublisherListAll searchString={searchString} publisherDetails={publisherDetails}/>
+      </div>
+      <Content bgColor={"bg-bgLightest dark:bg-black"}>
+        <PublisherListAll
+          searchString={searchString}
+          publisherDetails={publisherDetails}
+        />
       </Content>
     </>
   );

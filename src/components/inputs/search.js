@@ -2,19 +2,14 @@ import { style } from "./style";
 
 export const Search = ({action}) => {
   return (
-    <form className="flex items-center  sticky top-0  inset-x-0 ">
-      <label htmlFor="simple-search" className={style.label}
-      // "sr-only"
-      >
-        {/* Search */}
-      </label>
+    <form>
       <div className="relative w-full">
         <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
           <svg
             aria-hidden="true"
-            className="h-5 w-5 text-gray-500 xxx-dark:text-gray-400"
+            className="h-7 w-7 text-gray-500 dark:text-gray-400"
             fill="currentColor"
-            viewBox="0 0 20 20"
+            viewBox="0 0 18 18"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -27,11 +22,10 @@ export const Search = ({action}) => {
         <input
           type="text"
           id="simple-search"
-          className={style.input + "pl-12"}
-          // "block w-full h-16  border border-gray-300 bg-gray-50 p-2.5 pl-10 text-lg text-gray-900 focus:border-blue-500 focus:ring-blue-500  xxx-dark:border-gray-600 xxx-dark:bg-gray-700 xxx-dark:text-white xxx-dark:placeholder-gray-400 xxx-dark:focus:border-blue-500 xxx-dark:focus:ring-blue-500"
+          onChange={action}
+          className={style.input + "pl-16 text-xl"}
           placeholder="Search"
           required=""
-          onChange={action}
         />
       </div>
     </form>

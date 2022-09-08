@@ -8,6 +8,7 @@ export const Content = ({ children, bgColor }) => {
         className="
           absolute
           inset-y-navW
+          px-4
           inset-x-0
           overflow-auto
           overscroll-y-contain

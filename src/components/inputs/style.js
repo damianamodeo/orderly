@@ -20,7 +20,7 @@ export const style = {
     dark:border-gray-600 
     dark:bg-gray-700 
     dark:text-white 
-    dark:focus:border-blue-500 `,
+    dark:focus:border-primaryD `,
   label: 
    `absolute 
     top-4 
