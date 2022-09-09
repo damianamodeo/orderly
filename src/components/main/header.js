@@ -13,14 +13,14 @@ export const Header = ({ headerLeft, title, headerRight }) => {
           items-center 
           justify-between 
           bg-bg
-          dark:bg-bgD
           p-3
+          dark:bg-bgD
           md:left-navW
           "
       >
-        {headerLeft}
-        {title}
-        {headerRight}
+        <div className="mx-2">{headerLeft}</div>
+        <div>{title}</div>
+        <div className="mx-2">{headerRight}</div>
       </div>
     </>
   );

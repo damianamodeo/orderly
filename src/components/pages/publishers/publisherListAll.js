@@ -1,7 +1,7 @@
 import { useLiveQuery } from "dexie-react-hooks";
 import { db } from "../../../services/db/dexie";
 import { Card } from "../../../temp/components/card";
-import { Text } from "../../text/default";
+import { CardLabel } from "../../text/card-label";
 
 export const PublisherListAll = ({ searchString, publisherDetails }) => {
   const publishers = useLiveQuery(async () => {
@@ -24,9 +24,9 @@ export const PublisherListAll = ({ searchString, publisherDetails }) => {
             publisherDetails(publisher);
           }}
         >
-          <Text>
+          <CardLabel>
             {publisher.lastName}, {publisher.firstName}
-          </Text>
+          </CardLabel>
         </Card>
       ))}
     </>

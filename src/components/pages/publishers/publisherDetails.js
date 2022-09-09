@@ -8,6 +8,8 @@ import { MessageIcon } from "../../../icons/other/message";
 import { Heading } from "../../text/heading";
 import { Card } from "../../../temp/components/card";
 import { style } from "../../../icons/header/style";
+import { CardLabel } from "../../text/card-label";
+import { LinkText } from "../../text/link-text";
 
 export const PublisherDetails = ({
   publisher,
@@ -23,15 +25,15 @@ export const PublisherDetails = ({
         <div className="grid landscape:grid-cols-2">
           {publisher.mobilePhone || publisher.homePhone ? (
             <Card>
-              <Heading>Phone</Heading>
+              <CardLabel>Phone</CardLabel>
               {publisher.mobilePhone ? (
                 <div className={subSectionStyle}>
-                  <a
+                  <LinkText
                     className={detailStyle}
                     href={`tel://${publisher.mobilePhone}`}
                   >
                     {formatMobileNumber(publisher.mobilePhone)}
-                  </a>
+                  </LinkText>
                   <div className="flex space-x-2">
                     <a href={`sms://${publisher.mobilePhone}`}>
                       <MessageIcon />
@@ -41,12 +43,12 @@ export const PublisherDetails = ({
               ) : null}
               {publisher.homePhone ? (
                 <div className={subSectionStyle}>
-                  <a
+                  <LinkText
                     className={detailStyle}
                     href={`tel://${publisher.homePhone}`}
                   >
                     {formatHomeNumber(publisher.homePhone)}
-                  </a>
+                  </LinkText>
                 </div>
               ) : null}
             </Card>
@@ -54,25 +56,25 @@ export const PublisherDetails = ({
 
           {publisher.personalEmail || publisher.jwpubEmail ? (
             <Card>
-              <Heading>Email</Heading>
+              <CardLabel>Email</CardLabel>
               {publisher.personalEmail ? (
                 <div className={subSectionStyle}>
-                  <a
+                  <LinkText
                     className={detailStyle}
                     href={`mailto:${publisher.personalEmail}`}
                   >
                     {publisher.personalEmail}
-                  </a>
+                  </LinkText>
                 </div>
               ) : null}
               {publisher.jwpubEmail ? (
                 <div className={subSectionStyle}>
-                  <a
+                  <LinkText
                     className={detailStyle}
                     href={`mailto:${publisher.jwpubEmail}`}
                   >
                     {publisher.jwpubEmail}
-                  </a>
+                  </LinkText>
                 </div>
               ) : null}
             </Card>
@@ -83,9 +85,9 @@ export const PublisherDetails = ({
           publisher.street ||
           publisher.suburb ? (
             <Card>
-              <Heading>Address</Heading>
+              <CardLabel>Address</CardLabel>
               <div className={subSectionStyle}>
-                <a
+                <LinkText
                   className={detailStyle}
                   href={`https://www.google.com/maps/place/${publisher.houseNumber}+${publisher.street},+${publisher.suburb}`}
                 >
@@ -94,7 +96,7 @@ export const PublisherDetails = ({
                     {`${publisher.houseNumber} ${publisher.street}`}
                   </p>
                   <p>{`${publisher.suburb}`}</p>
-                </a>
+                </LinkText>
               </div>
             </Card>
           ) : null}

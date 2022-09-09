@@ -12,6 +12,8 @@ import { useLiveQuery } from "dexie-react-hooks";
 import { toTitleCase } from "../../../services/formatting/letterCase";
 import { Card } from "../../../temp/components/card";
 import { Heading } from "../../text/heading";
+import { CardLabel } from "../../text/card-label";
+import { InputGroup } from "../../inputs/input-group";
 
 
 export const PublisherForm = ({ publisher }) => {
@@ -43,8 +45,8 @@ export const PublisherForm = ({ publisher }) => {
     <>
       <div className="grid ">
         <Card className={`${formSectionStyles} md:col-span-2`}>
-          <Heading >Name</Heading>
-          <div className={`${inputStyles} landscape:md:grid-cols-4 `}>
+          <CardLabel >Name</CardLabel>
+          <InputGroup >
             <InputText
               label="First"
               value={firstName}
@@ -77,12 +79,12 @@ export const PublisherForm = ({ publisher }) => {
                 setOtherName(toTitleCase(e.target.value));
               }}
             />
-          </div>
+          </InputGroup>
         </Card>
 
         <Card className={`${formSectionStyles} `}>
-          <Heading >Phone</Heading>
-          <div className={`${inputStyles}`}>
+          <CardLabel >Phone</CardLabel>
+          <InputGroup >
             <InputNumber
               label="Mobile"
               value={formatMobileNumber(mobilePhone)}
@@ -103,12 +105,12 @@ export const PublisherForm = ({ publisher }) => {
                 publisher.homePhone = value.replace(/[^\d]/g, "");
               }}
             />
-          </div>
+          </InputGroup>
         </Card>
 
         <Card className={`${formSectionStyles} col-start-1`}>
-          <Heading >Email</Heading>
-          <div className={`${inputStyles}`}>
+          <CardLabel >Email</CardLabel>
+          <InputGroup>
             <InputEmail
               label="Personal"
               value={personalEmail}
@@ -125,12 +127,12 @@ export const PublisherForm = ({ publisher }) => {
                 setJwpubEmail(e.target.value);
               }}
             />
-          </div>
+          </InputGroup>
         </Card>
 
         <Card className={`${formSectionStyles} md:col-span-2 `}>
-          <Heading >Address</Heading>
-          <div className={`${inputStyles} landscape:md:grid-cols-3`}>
+          <CardLabel >Address</CardLabel>
+          <InputGroup>
             <div className="grid grid-cols-2 gap-2">
               <InputNumber
                 label="Unit"
@@ -167,11 +169,11 @@ export const PublisherForm = ({ publisher }) => {
                 }}
               />
             </div>
-          </div>
+          </InputGroup>
         </Card>
 
         <Card className={`${formSectionStyles} col-start-1`}>
-          <Heading >Details</Heading>
+          <CardLabel >Details</CardLabel>
           <div className={`${inputStyles}  `}>
             <InputSelect
               label="Family Head"
@@ -183,7 +185,7 @@ export const PublisherForm = ({ publisher }) => {
                 setFamilyHead(e.target.value);
               }}
             />
-            <InputSelect
+            {/* <InputSelect
               label="Group"
               value={familyHead}
               publisher={publisher}
@@ -192,7 +194,7 @@ export const PublisherForm = ({ publisher }) => {
                 publisher.familyHead = parseInt(e.target.value);
                 setFamilyHead(e.target.value);
               }}
-            />
+            /> */}
           </div>
         </Card>
       </div>

@@ -11,8 +11,9 @@ export const style = {
     px-2.5 
     pb-2.5 
     pt-5 
-    font-bold 
+    text-xl 
     text-gray-900 
+    focus:text-primary 
     focus:border-b-4
     focus:border-primary 
     focus:outline-none 
@@ -29,8 +30,8 @@ export const style = {
     origin-[0] 
     -translate-y-4 
     scale-75 
-    transform 
     text-sm 
+    transform  
     text-gray-500 
     duration-300 
     peer-placeholder-shown:translate-y-0 
