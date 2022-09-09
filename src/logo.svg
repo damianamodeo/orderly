@@ -2,16 +2,16 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="199.24799mm"
-   height="199.53802mm"
-   viewBox="0 0 199.24799 199.53802"
+   width="200mm"
+   height="200mm"
+   viewBox="0 0 200 200"
    version="1.1"
    id="svg169"
    inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
    sodipodi:docname="logo.svg"
-   inkscape:export-filename="logo.svg"
-   inkscape:export-xdpi="65.174545"
-   inkscape:export-ydpi="65.174545"
+   inkscape:export-filename="../public/logo512.png"
+   inkscape:export-xdpi="65.169998"
+   inkscape:export-ydpi="65.169998"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -39,19 +39,36 @@
   <defs
      id="defs166">
     <rect
-       x="73.095551"
-       y="26.359137"
-       width="655.20563"
+       x="73.095547"
+       y="26.359136"
+       width="655.20565"
        height="530.15973"
        id="rect411" />
+    <rect
+       x="20.655502"
+       y="24.233489"
+       width="837.27678"
+       height="786.14439"
+       id="rect405" />
+    <rect
+       x="15.892272"
+       y="325.6469"
+       width="700.57319"
+       height="380.80799"
+       id="rect347" />
+    <rect
+       x="38.589953"
+       y="83.940799"
+       width="693.31705"
+       height="644.05991"
+       id="rect281" />
   </defs>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(-0.60069001,-0.04122386)">
+     id="layer1">
     <rect
-       style="fill:#4a6da7;fill-opacity:1;stroke-width:0.264583"
+       style="fill:#4a6da7;stroke-width:0.264583;fill-opacity:1"
        id="rect419"
        width="199.248"
        height="199.53802"
@@ -59,13 +76,18 @@
        y="0.041223858" />
     <text
        xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text403"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:96px;font-family:'Noto Sans';-inkscape-font-specification:'Noto Sans Bold';text-align:center;white-space:pre;shape-inside:url(#rect405);display:inline;fill:#000000" />
+    <text
+       xml:space="preserve"
        transform="matrix(0.49164361,0,0,0.49164361,-96.577672,-36.256072)"
        id="text409"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:458.667px;font-family:'Noto Sans';-inkscape-font-specification:'Noto Sans Bold';text-align:center;white-space:pre;shape-inside:url(#rect411);display:inline;fill:#ffffff"><tspan
          x="219.52457"
          y="443.68909"
-         id="tspan2411"><tspan
+         id="tspan2626"><tspan
            style="font-weight:600;-inkscape-font-specification:'Noto Sans Semi-Bold'"
-           id="tspan2409">O</tspan></tspan></text>
+           id="tspan2624">O</tspan></tspan></text>
   </g>
 </svg>

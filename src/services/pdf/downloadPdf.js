@@ -42,8 +42,8 @@ export const downloadPdf = (publishers) => {
               },
             ],
           },
-        ])
-        (publishers
+        ]),
+        publishers
           ?.filter((p) => p.id !== head.id && p.familyHead === head.id)
           .forEach((member) =>
             family.push([
@@ -57,8 +57,8 @@ export const downloadPdf = (publishers) => {
                 ],
               },
             ])
-          ))
-        (docDefinition.content.push({ stack: family, unbreakable: true }))
+          ),
+        docDefinition.content.push({ stack: family, unbreakable: true })
       )
     );
     console.log(docDefinition)

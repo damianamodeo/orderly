@@ -16,15 +16,17 @@ export const FileInput = ({ id, label, helpText, types }) => {
           setText(e.target.value.match(/[/\\]([\w\d\s.\-()]+)$/)[1]);
         }}
       />
-      <Button
-        action={() => {
-          const fileInput = document.getElementById(id);
-          fileInput.click();
-        }}
-      >
-        Choose File
-      </Button>
-      <HelpText addStyle="align-middle-xxx">{text}</HelpText>
+      <div className="my-3 flex flex-col content-center gap-5 text-center">
+        <Button
+          action={() => {
+            const fileInput = document.getElementById(id);
+            fileInput.click();
+          }}
+        >
+          Choose File
+        </Button>
+        <HelpText>{text}</HelpText>
+      </div>
     </>
   );
 };

@@ -15,7 +15,6 @@ export const ImportStores = () => {
           helpText="Select a .csv or .ord file"
           types=".ord,.csv"
         />
-        {}
         <Button
           action={() => {
             importStores("publishers");

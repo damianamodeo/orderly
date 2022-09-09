@@ -6,10 +6,13 @@ import { Content } from "../../main/content";
 // import { Export } from "./export";
 import { downloadPdf } from "../../../services/pdf/downloadPdf";
 import { exportStore } from "../../../services/db/exportStore";
-import { ImportStores } from "./importStores";
 import { Card } from "../../../temp/components/card";
-import { Text } from "../../text/default";
+// import { Text } from "../../text/default";
 import { Heading } from "../../text/heading";
+import { Button } from "../../buttons/button";
+import { CardLabel } from "../../text/card-label";
+import { FileInput } from "../../inputs/file";
+import { importStores } from "../../../services/db/importStores";
 
 export const Settings = () => {
   const publishers = useLiveQuery(() =>
@@ -29,31 +32,52 @@ export const Settings = () => {
         headerRight={<div className="text-header text-primary"></div>}
       />
       <Content bgColor={"bg-bgLightest dark:bg-black "}>
-        <Card
-          className="m-4 bg-white p-4 text-center"
-          action={() => {
-            downloadPdf(publishers);
-          }}
-        >
-          <Text>Export Congregation to PDF Contact List</Text>
+        <Card>
+          <CardLabel>Export Congregation</CardLabel>
+          <div className="my-3 flex flex-col content-center gap-8">
+            <Button
+              action={() => {
+                downloadPdf(publishers);
+              }}
+            >
+              PDF
+            </Button>{" "}
+            <Button
+              action={() => {
+                exportStore("publishers", "ord");
+              }}
+            >
+              ORD
+            </Button>{" "}
+            <Button
+              action={() => {
+                exportStore("publishers", "csv");
+              }}
+            >
+              CSV
+            </Button>
+          </div>
         </Card>
-        <Card
-          className="m-4 bg-white p-4 text-center"
-          action={() => {
-            exportStore("publishers", "ord");
-          }}
-        >
-          <Text>Export Congregation to Orderly file</Text>
+        <Card>
+          <CardLabel>Import Congregation</CardLabel>
+
+          <div className="my-3 flex flex-col content-center gap-3">
+            <FileInput
+              id="import-stores"
+              label=""
+              helpText="Select a .csv or .ord file"
+              types=".ord,.csv"
+            />
+            {}
+            <Button
+              action={() => {
+                importStores("publishers");
+              }}
+            >
+              Import
+            </Button>
+          </div>
         </Card>
-        <Card
-          className="m-4 bg-white p-4 text-center"
-          action={() => {
-            exportStore("publishers", "csv");
-          }}
-        >
-          <Text>Export Congregation to CSV file</Text>
-        </Card>
-        <ImportStores />
       </Content>
     </>
   );
