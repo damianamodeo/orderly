@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "../buttons/button";
 import { HelpText } from "../text/help-text";
 
-export const FileInput = ({ id, label, helpText, types }) => {
+export const FileInput = ({ id, label, helpText, fileTypes }) => {
   const [text, setText] = useState(helpText);
 
   return (
@@ -10,7 +10,7 @@ export const FileInput = ({ id, label, helpText, types }) => {
       <input
         id={id}
         type="file"
-        accept={types}
+        accept=".ord"
         hidden="hidden"
         onChange={(e) => {
           setText(e.target.value.match(/[/\\]([\w\d\s.\-()]+)$/)[1]);

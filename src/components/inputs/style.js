@@ -13,7 +13,8 @@ export const style = {
     pt-5 
     text-xl 
     text-gray-900 
-    focus:text-primary 
+    focus:text-primary
+    dark:focus:text-primaryD
     focus:border-b-4
     focus:border-primary 
     focus:outline-none 
@@ -30,7 +31,6 @@ export const style = {
     origin-[0] 
     -translate-y-4 
     scale-75 
-    text-sm 
     transform  
     text-gray-500 
     duration-300 

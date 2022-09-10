@@ -10,46 +10,37 @@ import { Card } from "../../../temp/components/card";
 import { style } from "../../../icons/header/style";
 import { CardLabel } from "../../text/card-label";
 import { LinkText } from "../../text/link-text";
+import { CardGroup } from "../../cards/card-group";
 
 export const PublisherDetails = ({
   publisher,
   publisherList,
   publisherEdit,
 }) => {
-  const subSectionStyle = "flex justify-between m-2 ";
-  const detailStyle = "text-lg text-secondary font-normal truncate";
 
   return (
     <>
       <Content bgColor={"bg-bgLightest dark:bg-black"}>
-        <div className="grid landscape:grid-cols-2">
+        <CardGroup>
           {publisher.mobilePhone || publisher.homePhone ? (
+            
             <Card>
               <CardLabel>Phone</CardLabel>
               {publisher.mobilePhone ? (
-                <div className={subSectionStyle}>
-                  <LinkText
-                    className={detailStyle}
-                    href={`tel://${publisher.mobilePhone}`}
-                  >
+                <div className="flex justify-between">
+                  <LinkText href={`tel://${publisher.mobilePhone}`}>
                     {formatMobileNumber(publisher.mobilePhone)}
                   </LinkText>
-                  <div className="flex space-x-2">
                     <a href={`sms://${publisher.mobilePhone}`}>
                       <MessageIcon />
                     </a>
-                  </div>
+     
                 </div>
               ) : null}
               {publisher.homePhone ? (
-                <div className={subSectionStyle}>
-                  <LinkText
-                    className={detailStyle}
-                    href={`tel://${publisher.homePhone}`}
-                  >
-                    {formatHomeNumber(publisher.homePhone)}
-                  </LinkText>
-                </div>
+                <LinkText href={`tel://${publisher.homePhone}`}>
+                  {formatHomeNumber(publisher.homePhone)}
+                </LinkText>
               ) : null}
             </Card>
           ) : null}
@@ -58,24 +49,18 @@ export const PublisherDetails = ({
             <Card>
               <CardLabel>Email</CardLabel>
               {publisher.personalEmail ? (
-                <div className={subSectionStyle}>
-                  <LinkText
-                    className={detailStyle}
-                    href={`mailto:${publisher.personalEmail}`}
-                  >
-                    {publisher.personalEmail}
-                  </LinkText>
-                </div>
+                <LinkText
+                  href={`mailto:${publisher.personalEmail}`}
+                >
+                  {publisher.personalEmail}
+                </LinkText>
               ) : null}
               {publisher.jwpubEmail ? (
-                <div className={subSectionStyle}>
-                  <LinkText
-                    className={detailStyle}
-                    href={`mailto:${publisher.jwpubEmail}`}
-                  >
-                    {publisher.jwpubEmail}
-                  </LinkText>
-                </div>
+                <LinkText
+                  href={`mailto:${publisher.jwpubEmail}`}
+                >
+                  {publisher.jwpubEmail}
+                </LinkText>
               ) : null}
             </Card>
           ) : null}
@@ -86,21 +71,18 @@ export const PublisherDetails = ({
           publisher.suburb ? (
             <Card>
               <CardLabel>Address</CardLabel>
-              <div className={subSectionStyle}>
-                <LinkText
-                  className={detailStyle}
-                  href={`https://www.google.com/maps/place/${publisher.houseNumber}+${publisher.street},+${publisher.suburb}`}
-                >
-                  <p>
-                    {publisher.unitNumber ? `${publisher.unitNumber}/` : null}
-                    {`${publisher.houseNumber} ${publisher.street}`}
-                  </p>
-                  <p>{`${publisher.suburb}`}</p>
-                </LinkText>
-              </div>
+              <LinkText
+                href={`https://www.google.com/maps/place/${publisher.houseNumber}+${publisher.street},+${publisher.suburb}`}
+              >
+                <p>
+                  {publisher.unitNumber ? `${publisher.unitNumber}/` : null}
+                  {`${publisher.houseNumber} ${publisher.street}`}
+                </p>
+                <p>{`${publisher.suburb}`}</p>
+              </LinkText>
             </Card>
           ) : null}
-        </div>
+        </CardGroup>
       </Content>
 
       <Header
@@ -121,10 +103,7 @@ export const PublisherDetails = ({
           </Heading>
         }
         headerRight={
-          <div
-            className={style}
-            onClick={() => publisherEdit(publisher)}
-          >
+          <div className={style} onClick={() => publisherEdit(publisher)}>
             Edit
           </div>
         }

@@ -1,4 +1,3 @@
-
 import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
@@ -10,7 +9,7 @@ export const downloadPdf = (publishers) => {
   };
   let family;
   publishers
-    ?.filter((p) => !p.familyHead || p.id === p.familyHead )
+    ?.filter((p) => !p.familyHead || p.id === p.familyHead)
     .forEach(
       (head) => (
         (family = [
@@ -23,22 +22,33 @@ export const downloadPdf = (publishers) => {
                 text: head.lastName.toUpperCase(),
                 fontSize: 18,
                 bold: true,
+                lineHeight: 1.2,
                 width: "25%",
               },
-              { text: head.homePhone, width: "25%" },
+              { text: head.homePhone, width: "20%" },
               {
-                text: `${head.unitNumber ? `${head.unitNumber}/` : ""}${head.houseNumber
+                text: `${head.unitNumber ? `${head.unitNumber}/` : ""}${
+                  head.houseNumber
                 } ${head.street}, ${head.suburb}`,
-                fontSize: 13,
+                fontSize: 18,
+                bold: true,
+                alignment: "right",
+                link: `https://www.google.com/maps/place/${head.houseNumber}+${head.street},+${head.suburb}`,
               },
             ],
           },
           {
             columns: [
-              { text: head.firstName, width: "25%" },
-              { text: head.mobilePhone, width: "25%" },
+              { text: head.firstName, width: "25%", lineHeight: 1.4 },
+              {
+                text: head.mobilePhone,
+                width: "20%",
+                link: `tel://${head.mobilePhone}`,
+              },
               {
                 text: head.personalEmail,
+                link: `mailto:${head.personalEmail}`,
+                alignment: "right",
               },
             ],
           },
@@ -49,10 +59,16 @@ export const downloadPdf = (publishers) => {
             family.push([
               {
                 columns: [
-                  { text: member.firstName, width: "25%" },
-                  { text: member.mobilePhone, width: "25%" },
+                  { text: member.firstName, width: "25%", lineHeight: 1.4 },
+                  {
+                    text: member.mobilePhone,
+                    width: "20%",
+                    link: `tel://${member.mobilePhone}`,
+                  },
                   {
                     text: member.personalEmail,
+                    link: `mailto:${member.personalEmail}`,
+                    alignment: "right",
                   },
                 ],
               },
@@ -61,15 +77,7 @@ export const downloadPdf = (publishers) => {
         docDefinition.content.push({ stack: family, unbreakable: true })
       )
     );
-    console.log(docDefinition)
+  console.log(docDefinition);
 
   pdfMake.createPdf(docDefinition).download("damo.pdf");
-  // const pdfDocGenerator = pdfMake.createPdf(docDefinition);
-  // pdfDocGenerator.getDataUrl((dataUrl) => {
-  //   const targetElement = document.querySelector("#download");
-  //   const iframe = document.createElement("iframe");
-  //   iframe.src = dataUrl;
-  //   targetElement.appendChild(iframe);
-  //   iframe.classList.add("fixed", "w-screen", "h-screen");
-  // });
 };

@@ -12,6 +12,7 @@ export const updatePublisher = (publisher) => {
     homePhone: publisher.homePhone,
     mobilePhone: publisher.mobilePhone,
     personalEmail: publisher.personalEmail,
+    jwpubEmail: publisher.jwpubEmail,
     unitNumber: publisher.unitNumber,
     houseNumber: publisher.houseNumber,
     street: publisher.street,

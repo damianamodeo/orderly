@@ -13,7 +13,6 @@ import { Button } from "../../buttons/button";
 import { CardLabel } from "../../text/card-label";
 import { FileInput } from "../../inputs/file";
 import { importStores } from "../../../services/db/importStores";
-import { downloadPdfjs } from "../../../services/pdf/jsPDF";
 
 export const Settings = () => {
   const publishers = useLiveQuery(() =>
@@ -38,7 +37,7 @@ export const Settings = () => {
           <div className="my-3 flex flex-col content-center gap-8">
             <Button
               action={() => {
-                downloadPdfjs(publishers);
+                downloadPdf(publishers);
               }}
             >
               PDF
@@ -67,7 +66,7 @@ export const Settings = () => {
               id="import-stores"
               label=""
               helpText="Select a .csv or .ord file"
-              types=".ord,.csv"
+              fileTypes=".ord"
             />
             {}
             <Button

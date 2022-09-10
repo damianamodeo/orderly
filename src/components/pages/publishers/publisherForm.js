@@ -11,7 +11,6 @@ import { db } from "../../../services/db/dexie";
 import { useLiveQuery } from "dexie-react-hooks";
 import { toTitleCase } from "../../../services/formatting/letterCase";
 import { Card } from "../../../temp/components/card";
-import { Heading } from "../../text/heading";
 import { CardLabel } from "../../text/card-label";
 import { InputGroup } from "../../inputs/input-group";
 
