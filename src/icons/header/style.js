@@ -1,0 +1,1 @@
+export const style = "text-primary dark:text-primaryD "
