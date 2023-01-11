@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 
 export const Menubar = ({ menuList }) => {
+
+  
   const select = (e) => {
     let menuItems = document.querySelectorAll(".item");
     menuItems.forEach((item) =>
@@ -49,14 +51,7 @@ export const Menubar = ({ menuList }) => {
       >
         <div
           id="marker"
-          className="
-          absolute 
-          left-0 
-          bottom-0 
-          h-[2px] 
-          bg-primary
-          transition-all
-          duration-300
+          className="absolute left-0 bottom-0 h-[2px] bg-primary transition-all duration-300
           "
         ></div>
 
